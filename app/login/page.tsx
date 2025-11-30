@@ -1,30 +1,83 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { GradientButton } from "@/components/ui/gradient-button"
+import { supabase } from "@/lib/supabaseClient"
+import { useSupabaseUser } from "@/hooks/use-supabase-user"
 
 export default function LoginPage() {
+  const router = useRouter()
+  const { user, loading: userLoading } = useSupabaseUser()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (!userLoading && user) {
+      router.push("/account")
+    }
+  }, [user, userLoading, router])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Static form - no auth logic yet
-    console.log("Login attempt:", { email, password })
+    setError(null)
+    setLoading(true)
+
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+
+      if (error) {
+        setError(error.message)
+      } else {
+        router.push("/account")
+      }
+    } catch (err) {
+      setError("An unexpected error occurred")
+    } finally {
+      setLoading(false)
+    }
   }
 
-  const handleGoogleLogin = () => {
-    // Static - no real auth yet
-    console.log("Google login clicked")
+  const handleGoogleLogin = async () => {
+    setError(null)
+    setLoading(true)
+
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      })
+
+      if (error) {
+        setError(error.message)
+        setLoading(false)
+      }
+    } catch (err) {
+      setError("An unexpected error occurred")
+      setLoading(false)
+    }
+  }
+
+  if (userLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    )
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 relative">
-      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-secondary/5 rounded-full blur-[120px]" />
@@ -36,7 +89,6 @@ export default function LoginPage() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-md relative"
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 justify-center mb-8">
           <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-xl">S</span>
@@ -44,17 +96,22 @@ export default function LoginPage() {
           <span className="text-foreground font-semibold text-2xl tracking-tight">Sumirayan</span>
         </Link>
 
-        {/* Auth Card */}
         <div className="glass rounded-2xl p-8">
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-foreground mb-2">Welcome Back</h1>
             <p className="text-muted-foreground">Sign in to access Sumirayan Learn</p>
           </div>
 
-          {/* Google Login Button */}
+          {error && (
+            <div className="mb-6 p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+              {error}
+            </div>
+          )}
+
           <button
             onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-border bg-background hover:bg-muted transition-colors mb-6"
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-border bg-background hover:bg-muted transition-colors mb-6 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -74,7 +131,9 @@ export default function LoginPage() {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
               />
             </svg>
-            <span className="text-foreground font-medium">Continue with Google</span>
+            <span className="text-foreground font-medium">
+              {loading ? "Please wait..." : "Continue with Google"}
+            </span>
           </button>
 
           <div className="relative my-6">
@@ -86,7 +145,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">Email</label>
@@ -97,6 +155,7 @@ export default function LoginPage() {
                 className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="your@email.com"
                 required
+                disabled={loading}
               />
             </div>
 
@@ -109,6 +168,7 @@ export default function LoginPage() {
                 className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="••••••••"
                 required
+                disabled={loading}
               />
             </div>
 
@@ -122,8 +182,8 @@ export default function LoginPage() {
               </a>
             </div>
 
-            <GradientButton variant="primary" size="lg" className="w-full">
-              Sign In
+            <GradientButton variant="primary" size="lg" className="w-full" disabled={loading}>
+              {loading ? "Signing in..." : "Sign In"}
             </GradientButton>
           </form>
 
@@ -135,7 +195,6 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Back to Home */}
         <div className="text-center mt-6">
           <Link href="/" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
             ← Back to home

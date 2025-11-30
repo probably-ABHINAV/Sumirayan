@@ -1,6 +1,9 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import { getPortfolioItems } from "@/lib/supabase-data"
+import type { PortfolioItem } from "@/lib/types"
 
 interface CaseStudy {
   title: string
@@ -9,10 +12,58 @@ interface CaseStudy {
 }
 
 interface CaseStudiesProps {
-  studies: CaseStudy[]
+  studies?: CaseStudy[]
+  category?: 'design' | 'photography' | 'art'
+  useSupabase?: boolean
 }
 
-export function CaseStudies({ studies }: CaseStudiesProps) {
+export function CaseStudies({ studies, category, useSupabase = false }: CaseStudiesProps) {
+  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([])
+  const [loading, setLoading] = useState(useSupabase)
+
+  useEffect(() => {
+    if (!useSupabase) return
+    
+    async function loadPortfolio() {
+      try {
+        const data = await getPortfolioItems(category)
+        setPortfolioItems(data)
+      } catch (error) {
+        console.error('Error loading portfolio:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadPortfolio()
+  }, [category, useSupabase])
+
+  const displayItems = useSupabase
+    ? portfolioItems.map(item => ({
+        title: item.title,
+        category: item.short_description || item.category,
+        image: item.image_url || '/placeholder.svg'
+      }))
+    : studies || []
+
+  if (loading) {
+    return (
+      <section className="py-24 bg-card/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-4 w-32 bg-muted rounded mb-12" />
+          <div className="grid md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="animate-pulse">
+                <div className="aspect-[4/3] rounded-2xl bg-muted mb-4" />
+                <div className="h-4 w-24 bg-muted rounded mb-2" />
+                <div className="h-5 w-32 bg-muted rounded" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="py-24 bg-card/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +77,7 @@ export function CaseStudies({ studies }: CaseStudiesProps) {
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {studies.map((study, index) => (
+          {displayItems.map((study, index) => (
             <motion.div
               key={study.title}
               initial={{ opacity: 0, y: 30 }}

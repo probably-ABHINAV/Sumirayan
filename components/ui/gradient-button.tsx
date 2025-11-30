@@ -11,6 +11,7 @@ interface GradientButtonProps {
   variant?: "primary" | "secondary" | "outline"
   size?: "sm" | "md" | "lg"
   className?: string
+  disabled?: boolean
 }
 
 export function GradientButton({
@@ -20,6 +21,7 @@ export function GradientButton({
   variant = "primary",
   size = "md",
   className = "",
+  disabled = false,
 }: GradientButtonProps) {
   const baseStyles = "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all"
 
@@ -35,19 +37,32 @@ export function GradientButton({
     lg: "px-8 py-4 text-lg",
   }
 
-  const buttonClass = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`
+  const disabledStyles = disabled ? "opacity-50 cursor-not-allowed" : ""
+  const buttonClass = `${baseStyles} ${variants[variant]} ${sizes[size]} ${disabledStyles} ${className}`
 
-  const MotionComponent = motion.create(href ? Link : "button")
+  if (href && !disabled) {
+    const MotionLink = motion.create(Link)
+    return (
+      <MotionLink
+        href={href}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className={buttonClass}
+      >
+        {children}
+      </MotionLink>
+    )
+  }
 
   return (
-    <MotionComponent
-      href={href || ""}
-      onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+    <motion.button
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      whileHover={disabled ? undefined : { scale: 1.02 }}
+      whileTap={disabled ? undefined : { scale: 0.98 }}
       className={buttonClass}
     >
       {children}
-    </MotionComponent>
+    </motion.button>
   )
 }
