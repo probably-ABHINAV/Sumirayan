@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { navLinks } from "@/lib/data"
@@ -25,20 +26,14 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/" className="flex items-center h-full">
-              <svg 
-                viewBox="0 0 800 200" 
-                xmlns="http://www.w3.org/2000/svg" 
+              <Image
+                src="/logo-sumirayan.png"   // put your logo file here
+                alt="Sumirayan Design"
+                width={200}
+                height={60}
+                priority
                 className="h-12 w-auto"
-              >
-                <circle cx="340" cy="50" r="30" fill="#E53935"/>
-                <text x="10" y="130" fontFamily="Arial, sans-serif" fontSize="120" fontWeight="bold" fill="#1565C0" letterSpacing="8">
-                  sumirayan
-                </text>
-                <path d="M 10 160 Q 400 180 750 160" stroke="#1565C0" strokeWidth="20" fill="none" strokeLinecap="round"/>
-                <text x="650" y="130" fontFamily="Arial, sans-serif" fontSize="60" fontWeight="bold" fill="#E53935" letterSpacing="2">
-                  DESIGN
-                </text>
-              </svg>
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
