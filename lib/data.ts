@@ -65,12 +65,12 @@ export const services = {
 }
 
 export const projects = [
-  { id: 1, title: "Brand Evolution", category: "Design", image: "/brand-evolution-project-dark.jpg" },
-  { id: 2, title: "Cinematic Wedding", category: "Photography", image: "/cinematic-wedding-dark.jpg" },
-  { id: 3, title: "Abstract Mural", category: "Art", image: "/placeholder.svg?height=400&width=500" },
-  { id: 4, title: "Product Launch", category: "Design", image: "/placeholder.svg?height=450&width=450" },
-  { id: 5, title: "Fashion Editorial", category: "Photography", image: "/placeholder.svg?height=500&width=400" },
-  { id: 6, title: "Digital Portrait", category: "Art", image: "/placeholder.svg?height=400&width=400" },
+  { id: 1, title: "Brand Evolution", category: "Design", image: "/graphic_design_brand_ad310d11.jpg" },
+  { id: 2, title: "Cinematic Wedding", category: "Photography", image: "/professional_wedding_3c6dac0e.jpg" },
+  { id: 3, title: "Abstract Mural", category: "Art", image: "/abstract_modern_art__f2044bf0.jpg" },
+  { id: 4, title: "Product Launch", category: "Design", image: "/luxury_product_photo_319cae7d.jpg" },
+  { id: 5, title: "Corporate Event", category: "Photography", image: "/corporate_event_phot_9b1b5c5a.jpg" },
+  { id: 6, title: "Digital Portrait", category: "Art", image: "/abstract_modern_art__739208b9.jpg" },
 ]
 
 export const testimonials = [
@@ -80,7 +80,7 @@ export const testimonials = [
     role: "Marketing Director, TechVista",
     content:
       "Sumirayan Design transformed our brand identity completely. Their creative approach and attention to detail exceeded all expectations. The campaign they designed increased our engagement by 300%.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
   {
     id: 2,
@@ -88,7 +88,7 @@ export const testimonials = [
     role: "Founder, EventMasters",
     content:
       "The photography team captured our corporate event beautifully. Every moment was preserved with artistic precision. We've been working with them for 3 years now.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
   {
     id: 3,
@@ -96,7 +96,7 @@ export const testimonials = [
     role: "Interior Designer",
     content:
       "The custom mural they created for our client's office is absolutely stunning. It became the centerpiece of the entire space. True artists with incredible vision.",
-    avatar: "/placeholder.svg?height=80&width=80",
+    avatar: "/placeholder-user.jpg",
   },
 ]
 
@@ -143,7 +143,7 @@ export const articles = [
     category: "Design",
     date: "January 20, 2025",
     readTime: "8 min read",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/graphic_design_brand_694fc295.jpg",
     featured: true,
   },
   {
@@ -153,7 +153,7 @@ export const articles = [
     category: "Photography",
     date: "January 15, 2025",
     readTime: "6 min read",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/professional_wedding_72f58338.jpg",
   },
   {
     id: 3,
@@ -162,7 +162,7 @@ export const articles = [
     category: "Art History",
     date: "January 10, 2025",
     readTime: "10 min read",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/abstract_modern_art__739208b9.jpg",
   },
   {
     id: 4,
@@ -171,7 +171,7 @@ export const articles = [
     category: "Marketing",
     date: "January 5, 2025",
     readTime: "7 min read",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/creative_team_workin_bdeb373e.jpg",
   },
 ]
 

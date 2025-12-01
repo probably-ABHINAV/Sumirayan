@@ -128,7 +128,7 @@ export function ContactForm() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <GradientButton variant="primary" size="lg">
+            <GradientButton variant="primary" size="lg" type="submit">
               Send Message
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

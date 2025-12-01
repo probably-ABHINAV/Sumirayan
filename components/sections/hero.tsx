@@ -10,19 +10,19 @@ const tabs = [
     title: "Design",
     description:
       "Campaign planning, digital marketing, graphic design, and video editing that captivates and converts.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/graphic_design_brand_694fc295.jpg",
   },
   {
     id: "photography",
     title: "Photography",
     description: "Wedding, events, product, portrait, and advertising photography that tells your story beautifully.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/professional_wedding_72f58338.jpg",
   },
   {
     id: "art",
     title: "Art",
     description: "Manual & digital painting, sketching, wall murals, and handmade artwork that transforms spaces.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/abstract_modern_art__739208b9.jpg",
   },
 ]
 

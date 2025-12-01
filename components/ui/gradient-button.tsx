@@ -12,6 +12,7 @@ interface GradientButtonProps {
   size?: "sm" | "md" | "lg"
   className?: string
   disabled?: boolean
+  type?: "button" | "submit" | "reset"
 }
 
 export function GradientButton({
@@ -22,6 +23,7 @@ export function GradientButton({
   size = "md",
   className = "",
   disabled = false,
+  type = "button",
 }: GradientButtonProps) {
   const baseStyles = "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all"
 
@@ -56,6 +58,7 @@ export function GradientButton({
 
   return (
     <motion.button
+      type={type}
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       whileHover={disabled ? undefined : { scale: 1.02 }}
