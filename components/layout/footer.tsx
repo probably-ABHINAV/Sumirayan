@@ -3,21 +3,21 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">S</span>
+          <div className="sm:col-span-2 text-center sm:text-left">
+            <Link href="/" className="inline-flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-base sm:text-lg">S</span>
               </div>
-              <span className="text-foreground font-semibold text-xl tracking-tight">Sumirayan Design</span>
+              <span className="text-foreground font-semibold text-lg sm:text-xl tracking-tight">Sumirayan Design</span>
             </Link>
-            <p className="text-muted-foreground max-w-md mb-6">
+            <p className="text-muted-foreground text-sm sm:text-base max-w-md mx-auto sm:mx-0 mb-5 sm:mb-6">
               The Best Solution in Your Budget. We are a premium creative agency specializing in Design, Photography &
               Videography, and Art.
             </p>
-            <div className="flex gap-4">
+            <div className="flex justify-center sm:justify-start gap-3 sm:gap-4">
               {[
                 {
                   name: "Instagram",
@@ -35,10 +35,10 @@ export function Footer() {
                 <a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
                   aria-label={social.name}
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
                 </a>
@@ -47,38 +47,38 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Services</h4>
-            <nav className="flex flex-col gap-3">
-              <Link href="/design" className="text-muted-foreground hover:text-foreground transition-colors">
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Services</h4>
+            <nav className="flex flex-col gap-2.5 sm:gap-3">
+              <Link href="/design" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Design
               </Link>
-              <Link href="/photography" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/photography" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Photography
               </Link>
-              <Link href="/art" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/art" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Art
               </Link>
-              <Link href="/learn" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/learn" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Learn
               </Link>
             </nav>
           </div>
 
           {/* Company */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Company</h4>
-            <nav className="flex flex-col gap-3">
-              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+          <div className="text-center sm:text-left">
+            <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Company</h4>
+            <nav className="flex flex-col gap-2.5 sm:gap-3">
+              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 About
               </Link>
-              <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Careers
               </Link>
-              <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Events
               </Link>
-              <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm min-h-[44px] sm:min-h-0 flex items-center justify-center sm:justify-start">
                 Contact
               </Link>
             </nav>
@@ -86,15 +86,15 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="border-t border-border mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-xs sm:text-sm text-center md:text-left">
             © {new Date().getFullYear()} Sumirayan Design Private Limited. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+          <div className="flex flex-row items-center gap-4 sm:gap-6">
+            <a href="#" className="text-muted-foreground hover:text-foreground text-xs sm:text-sm transition-colors min-h-[44px] flex items-center">
               Privacy Policy
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground text-xs sm:text-sm transition-colors min-h-[44px] flex items-center">
               Terms of Service
             </a>
           </div>

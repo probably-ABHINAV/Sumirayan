@@ -226,3 +226,13 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(10, 91, 181, 0.8);
 }
+
+/* Hide scrollbar utility for horizontal scroll areas */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

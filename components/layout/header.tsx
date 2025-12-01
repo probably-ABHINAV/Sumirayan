@@ -32,7 +32,7 @@ export function Header() {
                 width={200}
                 height={60}
                 priority
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-none"
               />
             </Link>
 
@@ -63,7 +63,7 @@ export function Header() {
               </Link>
             </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               {!loading && (
                 <div className="hidden lg:flex items-center gap-3">
                   {user ? (
@@ -102,7 +102,7 @@ export function Header() {
 
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-border hover:bg-muted hover:border-foreground transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-lg border border-border hover:bg-muted hover:border-foreground transition-colors"
                 aria-label="Open menu"
               >
                 <svg className="w-5 h-5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +128,7 @@ export function Header() {
                   <svg 
                     viewBox="0 0 800 200" 
                     xmlns="http://www.w3.org/2000/svg" 
-                    className="h-12 w-auto"
+                    className="h-8 sm:h-12 w-auto max-w-[160px] sm:max-w-none"
                   >
                     <circle cx="340" cy="50" r="30" fill="#E53935"/>
                     <text x="10" y="130" fontFamily="Arial, sans-serif" fontSize="120" fontWeight="bold" fill="#1565C0" letterSpacing="8">
@@ -142,7 +142,7 @@ export function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                  className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
                   aria-label="Close menu"
                 >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,7 +164,7 @@ export function Header() {
                         <Link
                           href={link.href}
                           onClick={() => setIsMenuOpen(false)}
-                          className="block text-3xl md:text-5xl lg:text-6xl font-bold text-foreground hover:text-primary transition-colors py-2"
+                          className="block text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground hover:text-primary transition-colors py-2"
                         >
                           {link.name}
                         </Link>
@@ -181,7 +181,7 @@ export function Header() {
                     <Link
                       href="/contact"
                       onClick={() => setIsMenuOpen(false)}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:opacity-90 transition-opacity glow-primary"
+                      className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity glow-primary"
                     >
                       Start Your Campaign
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

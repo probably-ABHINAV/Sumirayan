@@ -13,7 +13,7 @@ export function SignatureProjects() {
   const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter)
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           label="Portfolio"
@@ -22,12 +22,12 @@ export function SignatureProjects() {
         />
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex overflow-x-auto sm:overflow-visible sm:flex-wrap justify-start sm:justify-center gap-2 mb-8 sm:mb-12 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap min-h-[44px] flex-shrink-0 ${
                 activeFilter === filter
                   ? "bg-primary text-primary-foreground"
                   : "bg-muted text-muted-foreground hover:text-foreground"
@@ -39,7 +39,7 @@ export function SignatureProjects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -50,7 +50,7 @@ export function SignatureProjects() {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden glass">
+              <div className="relative aspect-[3/4] rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden glass">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}

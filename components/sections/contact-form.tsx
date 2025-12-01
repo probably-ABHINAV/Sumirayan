@@ -19,16 +19,15 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Static form - no submission handling yet
     console.log("Form submitted:", formData)
   }
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-8 sm:py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 relative">
         <SectionHeading
           label="Get Started"
           title="Start Your Campaign"
@@ -41,52 +40,52 @@ export function ContactForm() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           onSubmit={handleSubmit}
-          className="glass rounded-2xl p-8 md:p-12"
+          className="glass rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12"
         >
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">Name</label>
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Name</label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base min-h-[44px]"
                 placeholder="Your name"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Email</label>
               <input
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base min-h-[44px]"
                 placeholder="your@email.com"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Phone</label>
               <input
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base min-h-[44px]"
                 placeholder="+91 12345 67890"
               />
             </div>
 
             {/* Project Type */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">Project Type</label>
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Project Type</label>
               <select
                 value={formData.projectType}
                 onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base min-h-[44px]"
               >
                 <option value="">Select a service</option>
                 <option value="design">Design & Branding</option>
@@ -98,12 +97,12 @@ export function ContactForm() {
             </div>
 
             {/* Budget */}
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-foreground mb-2">Budget Range</label>
+            <div className="sm:col-span-2">
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Budget Range</label>
               <select
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base min-h-[44px]"
               >
                 <option value="">Select budget range</option>
                 <option value="10k-25k">₹10,000 - ₹25,000</option>
@@ -115,22 +114,22 @@ export function ContactForm() {
             </div>
 
             {/* Message */}
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+            <div className="sm:col-span-2">
+              <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5">Message</label>
               <textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                rows={3}
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none text-sm sm:text-base"
                 placeholder="Tell us about your project..."
               />
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center">
-            <GradientButton variant="primary" size="lg" type="submit">
+          <div className="mt-4 sm:mt-6 md:mt-8 flex justify-center">
+            <GradientButton variant="primary" size="lg" type="submit" className="w-full sm:w-auto min-h-[44px] text-sm sm:text-base">
               Send Message
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </GradientButton>
