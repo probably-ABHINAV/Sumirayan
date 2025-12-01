@@ -27,7 +27,7 @@ export function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/" className="flex items-center h-full">
               <Image
-                src="/logo-sumirayan.png"   // put your logo file here
+                src="sumirayan design.png"  
                 alt="Sumirayan Design"
                 width={200}
                 height={60}
