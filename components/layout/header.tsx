@@ -22,73 +22,44 @@ export function Header() {
 
   return (
     <>
+      {/* ================= HEADER BAR ================= */}
       <header className="fixed top-0 left-0 right-0 z-50 glass">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
+            {/* LOGO */}
             <Link href="/" className="flex items-center h-full">
               <Image
-                src="sumirayan design.png"  
+                src="/sumirayan design.png"
                 alt="Sumirayan Design"
                 width={200}
                 height={60}
                 priority
-                className="h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-none"
+                className="h-10 sm:h-12 w-auto max-w-[160px]"
               />
             </Link>
 
+            {/* DESKTOP NAV */}
             <nav className="hidden lg:flex items-center gap-8">
-              <Link
-                href="/design"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                Design
-              </Link>
-              <Link
-                href="/photography"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                Photography
-              </Link>
-              <Link
-                href="/art"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                Art
-              </Link>
-              <Link
-                href="/learn"
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                Learn
-              </Link>
+              <Link href="/design" className="nav-link">Design</Link>
+              <Link href="/photography" className="nav-link">Photography</Link>
+              <Link href="/art" className="nav-link">Art</Link>
+              <Link href="/learn" className="nav-link">Learn</Link>
             </nav>
 
-            <div className="flex items-center gap-2 sm:gap-4">
+            {/* ACTIONS */}
+            <div className="flex items-center gap-3">
               {!loading && (
                 <div className="hidden lg:flex items-center gap-3">
                   {user ? (
                     <>
-                      <Link
-                        href="/account"
-                        className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                      >
-                        Account
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                      >
+                      <Link href="/account" className="nav-link">Account</Link>
+                      <button onClick={handleLogout} className="nav-link">
                         Logout
                       </button>
                     </>
                   ) : (
                     <>
-                      <Link
-                        href="/login"
-                        className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                      >
-                        Login
-                      </Link>
+                      <Link href="/login" className="nav-link">Login</Link>
                       <Link
                         href="/signup"
                         className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
@@ -100,12 +71,13 @@ export function Header() {
                 </div>
               )}
 
+              {/* MENU BUTTON */}
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="w-11 h-11 flex items-center justify-center rounded-lg border border-border hover:bg-muted hover:border-foreground transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-lg border border-border hover:bg-muted transition-colors"
                 aria-label="Open menu"
               >
-                <svg className="w-5 h-5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
@@ -114,6 +86,7 @@ export function Header() {
         </div>
       </header>
 
+      {/* ================= FULLSCREEN MENU ================= */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -123,21 +96,24 @@ export function Header() {
             className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl"
           >
             <div className="h-full flex flex-col">
-              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20">
-               <Link
-  href="/"
-  onClick={() => setIsMenuOpen(false)}
-  className="flex items-center h-full"
->
-  <Image
-    src="sumirayan design.png"     // ✅ put your actual logo image inside /public/ folder
-    alt="Sumirayan Design Logo"
-    width={180}
-    height={60}
-    priority
-    className="h-8 sm:h-12 w-auto max-w-[160px] sm:max-w-none object-contain"
-  />
-</Link>
+              {/* MENU HEADER */}
+              <div className="flex items-center justify-between px-6 h-16 md:h-20">
+                <Link
+                  href="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center h-full"
+                >
+                  {/* SAME LOGO HERE */}
+                  <Image
+                    src="/sumirayan design.png"
+                    alt="Sumirayan Design"
+                    width={200}
+                    height={60}
+                    priority
+                    className="h-8 sm:h-12 w-auto max-w-[160px]"
+                  />
+                </Link>
+
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
@@ -149,7 +125,9 @@ export function Header() {
                 </button>
               </div>
 
+              {/* MENU BODY */}
               <div className="flex-1 flex flex-col lg:flex-row">
+                {/* LINKS */}
                 <div className="flex-1 flex flex-col justify-center px-8 lg:px-16">
                   <nav className="space-y-2">
                     {navLinks.map((link, index) => (
@@ -162,7 +140,7 @@ export function Header() {
                         <Link
                           href={link.href}
                           onClick={() => setIsMenuOpen(false)}
-                          className="block text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground hover:text-primary transition-colors py-2"
+                          className="block text-2xl sm:text-3xl md:text-5xl font-bold hover:text-primary transition-colors py-2"
                         >
                           {link.name}
                         </Link>
@@ -179,83 +157,55 @@ export function Header() {
                     <Link
                       href="/contact"
                       onClick={() => setIsMenuOpen(false)}
-                      className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity glow-primary"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:opacity-90 transition-opacity"
                     >
-                      Start Your Campaign
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
+                      Start Your Campaign →
                     </Link>
                   </motion.div>
                 </div>
 
-                <div className="lg:w-80 p-8 lg:p-16 flex flex-col justify-end lg:justify-center gap-4 border-t lg:border-t-0 lg:border-l border-border">
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      {user ? `Signed in as ${user.email}` : "Access Sumirayan Learn"}
-                    </p>
-                    <div className="flex flex-col gap-3">
-                      {user ? (
-                        <>
-                          <Link
-                            href="/account"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg text-center font-medium hover:opacity-90 transition-opacity"
-                          >
-                            My Account
-                          </Link>
-                          <button
-                            onClick={handleLogout}
-                            className="px-6 py-3 border border-border rounded-lg text-center font-medium hover:bg-muted transition-colors"
-                          >
-                            Sign Out
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <Link
-                            href="/login"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="px-6 py-3 border border-border rounded-lg text-center font-medium hover:bg-muted transition-colors"
-                          >
-                            Log In
-                          </Link>
-                          <Link
-                            href="/signup"
-                            onClick={() => setIsMenuOpen(false)}
-                            className="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg text-center font-medium hover:opacity-90 transition-opacity"
-                          >
-                            Sign Up
-                          </Link>
-                        </>
-                      )}
-                    </div>
-                  </motion.div>
+                {/* ACCOUNT */}
+                <div className="lg:w-80 p-8 lg:p-16 flex flex-col justify-center gap-4 border-t lg:border-t-0 lg:border-l border-border">
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {user ? `Signed in as ${user.email}` : "Access Sumirayan Learn"}
+                  </p>
 
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
-                    className="mt-8"
-                  >
-                    <p className="text-muted-foreground text-sm mb-4">Follow Us</p>
-                    <div className="flex gap-4">
-                      {["Instagram", "YouTube", "Facebook"].map((social) => (
-                        <a
-                          key={social}
-                          href="#"
-                          className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                  <div className="flex flex-col gap-3">
+                    {user ? (
+                      <>
+                        <Link
+                          href="/account"
+                          onClick={() => setIsMenuOpen(false)}
+                          className="px-6 py-3 bg-secondary rounded-lg text-center font-medium"
                         >
-                          {social}
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
+                          My Account
+                        </Link>
+                        <button
+                          onClick={handleLogout}
+                          className="px-6 py-3 border border-border rounded-lg font-medium"
+                        >
+                          Sign Out
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          href="/login"
+                          onClick={() => setIsMenuOpen(false)}
+                          className="px-6 py-3 border border-border rounded-lg text-center"
+                        >
+                          Log In
+                        </Link>
+                        <Link
+                          href="/signup"
+                          onClick={() => setIsMenuOpen(false)}
+                          className="px-6 py-3 bg-secondary rounded-lg text-center"
+                        >
+                          Sign Up
+                        </Link>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

@@ -165,17 +165,10 @@
   * {
     @apply border-border outline-ring/50;
   }
-
-  html,
   body {
-    @apply bg-background text-foreground w-full max-w-full overflow-x-hidden;
-  }
-
-  body {
-    @apply min-h-screen;
+    @apply bg-background text-foreground;
   }
 }
-
 
 /* Glassmorphism */
 .glass {
