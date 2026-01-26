@@ -109,7 +109,7 @@ export function SignatureProjects() {
                   <div className="p-4 rounded-full bg-white/10 backdrop-blur-md group-hover:scale-110 transition-transform">
                     <ImageIcon className="w-12 h-12 text-foreground" />
                   </div>
-                  <h3 className="text-2xl font-bold">Photographs</h3>
+                  <h3 className="text-2xl font-bold">Graphic</h3>
                   <p className="text-muted-foreground">{selectedClient.photos?.length || 0} items</p>
                 </div>
                 {/* Background preview using the first photo or cover */}
@@ -163,7 +163,7 @@ export function SignatureProjects() {
               </div>
               {(!selectedClient.photos || selectedClient.photos.length === 0) && (
                 <div className="text-center py-12 text-muted-foreground">
-                  No photographs uploaded for this client yet.
+                  No Graphic uploaded for this client yet.
                 </div>
               )}
             </motion.div>
