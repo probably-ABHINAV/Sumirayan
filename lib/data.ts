@@ -64,13 +64,134 @@ export const services = {
   },
 }
 
+// --- UPDATED PROJECTS SECTION FOR 15 CLIENTS ---
 export const projects = [
-  { id: 1, title: "Brand Evolution", category: "Design", image: "/graphic_design_brand_ad310d11.jpg" },
-  { id: 2, title: "Cinematic Wedding", category: "Photography", image: "/professional_wedding_3c6dac0e.jpg" },
-  { id: 3, title: "Abstract Mural", category: "Art", image: "/abstract_modern_art__f2044bf0.jpg" },
-  { id: 4, title: "Product Launch", category: "Design", image: "/luxury_product_photo_319cae7d.jpg" },
-  { id: 5, title: "Corporate Event", category: "Photography", image: "/corporate_event_phot_9b1b5c5a.jpg" },
-  { id: 6, title: "Digital Portrait", category: "Art", image: "/abstract_modern_art__739208b9.jpg" },
+  { 
+    id: 1, 
+    title: "Client 1 Name", 
+    category: "Design", 
+    coverImage: "/graphic_design_brand_ad310d11.jpg", 
+    photos: [
+       "/client1-photo1.jpg", 
+       "/client1-photo2.jpg",
+       "/client1-photo3.jpg"
+    ],
+    videos: [
+       "/client1-video1.mp4"
+    ]
+  },
+  { 
+    id: 2, 
+    title: "Client 2 Name", 
+    category: "Photography", 
+    coverImage: "/professional_wedding_3c6dac0e.jpg", 
+    photos: ["/link-here.jpg", "/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 3, 
+    title: "Client 3 Name", 
+    category: "Art", 
+    coverImage: "/abstract_modern_art__f2044bf0.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 4, 
+    title: "Client 4 Name", 
+    category: "Design", 
+    coverImage: "/luxury_product_photo_319cae7d.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 5, 
+    title: "Client 5 Name", 
+    category: "Photography", 
+    coverImage: "/corporate_event_phot_9b1b5c5a.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 6, 
+    title: "Client 6 Name", 
+    category: "Art", 
+    coverImage: "/abstract_modern_art__739208b9.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 7, 
+    title: "Client 7 Name", 
+    category: "Design", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 8, 
+    title: "Client 8 Name", 
+    category: "Photography", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 9, 
+    title: "Client 9 Name", 
+    category: "Art", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 10, 
+    title: "Client 10 Name", 
+    category: "Design", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 11, 
+    title: "Client 11 Name", 
+    category: "Photography", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 12, 
+    title: "Client 12 Name", 
+    category: "Art", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 13, 
+    title: "Client 13 Name", 
+    category: "Design", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 14, 
+    title: "Client 14 Name", 
+    category: "Photography", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
+  { 
+    id: 15, 
+    title: "Client 15 Name", 
+    category: "Art", 
+    coverImage: "/placeholder.jpg", 
+    photos: ["/link-here.jpg"],
+    videos: ["/video-link-here.mp4"]
+  },
 ]
 
 export const testimonials = [
