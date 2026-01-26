@@ -520,7 +520,7 @@ export const projects = [
     title: "Raj Automobiles Ara",
     category: "Automobiles", // Or "Social Media" / "Photography"
     // Using the first image as the cover
-    coverImage: "/Raj Automobiles Ara/FB_IMG_1769429901704.jpg",
+    coverImage: "/Raj Automobiles Ara/ChatGPT Image Jan 26, 2026, 11_55_15 PM.png",
     photos: [
       "/Raj Automobiles Ara/FB_IMG_1769429901704.jpg",
       "/Raj Automobiles Ara/FB_IMG_1769429903927.jpg",
