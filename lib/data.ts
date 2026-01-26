@@ -552,7 +552,7 @@ export const projects = [
     title: "One Step Education",
     category: "Institution", // Or "Education" / "Branding"
     // Using the first image as the cover
-    coverImage: "/One step education/FB_IMG_1769429990871.jpg",
+    coverImage: "/One step education/ChatGPT Image Jan 26, 2026, 11_58_05 PM.png",
     photos: [
       "/One step education/FB_IMG_1769429990871.jpg",
       "/One step education/FB_IMG_1769429993417.jpg",
