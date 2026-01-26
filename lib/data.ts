@@ -68,11 +68,11 @@ export const services = {
 export const projects = [
   { 
     id: 1, 
-    title: "Client 1 Name", 
+    title: "Foundation Academy", 
     category: "Design", 
     coverImage: "/graphic_design_brand_ad310d11.jpg", 
     photos: [
-       "/client1-photo1.jpg", 
+       "/https://www.dropbox.com/scl/fi/q7quisrbeyfv8iwm0dmqb/621411602_17894638944399589_3102267917110965732_n.webp?rlkey=2wlw1f15nechmr8m1mgr1ikcl&st=54lc70th&dl=0", 
        "/client1-photo2.jpg",
        "/client1-photo3.jpg"
     ],
