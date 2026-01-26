@@ -10,7 +10,7 @@ import { ArrowLeft, Image as ImageIcon, Play, X } from "lucide-react"
 const MOCK_CLIENTS = Array.from({ length: 15 }).map((_, i) => ({
   id: i,
   title: `Client ${i + 1} Name`,
-  category: i % 2 === 0 ? "Design" : "Fashion",
+  category: i % 2 === 0 ? "Design" : "Photography",
   coverImage: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2400&auto=format&fit=crop",
   // Specific arrays for this client
   photos: [
@@ -52,7 +52,7 @@ export function SignatureProjects() {
            {!selectedClient ? (
              <SectionHeading
                label="Portfolio"
-               title="Our 15 Signature Clients"
+               title="Our Signature Clients"
                description="Select a client to view their exclusive photography and videography."
              />
            ) : (
