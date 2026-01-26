@@ -71,7 +71,7 @@ export const projects = [
     title: "Foundation Academy", 
     category: "Design", 
     // Using the first image as the cover
-    coverImage: "/Foundation/589939012_17887587867399589_8872761754851868759_n.webp", 
+    coverImage: "/Foundation/foundation.jpeg", 
     photos: [
        "/Foundation/572156313_17884188678399589_3993267574343605417_n.webp",
        "/Foundation/573186858_17884097862399589_7205358033559383019_n.webp",
