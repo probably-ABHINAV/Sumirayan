@@ -69,7 +69,7 @@ export const projects = [
   { 
     id: 1, 
     title: "Foundation Academy", 
-    category: "Design", 
+    category: "School", 
     // Using the first image as the cover
     coverImage: "/Foundation/found1.png", 
     photos: [
