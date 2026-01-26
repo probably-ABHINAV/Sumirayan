@@ -429,7 +429,7 @@ export const projects = [
     title: "Yogesh Artitect and Interior",
     category: "Interior Design", // Or "Art" / "Interior Design"
     // Using the first image as the cover
-    coverImage: "/Yogesh Artitect and interior/FB_IMG_1769435611851.jpg",
+    coverImage: "/Yogesh Artitect and interior/ChatGPT Image Jan 27, 2026, 12_04_57 AM.png",
     photos: [
       "/Yogesh Artitect and interior/FB_IMG_1769435611851.jpg",
       "/Yogesh Artitect and interior/FB_IMG_1769435613364.jpg",
