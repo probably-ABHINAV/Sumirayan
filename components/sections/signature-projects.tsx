@@ -4,22 +4,29 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { SectionHeading } from "@/components/ui/section-heading"
 import { ArrowLeft, Image as ImageIcon, Play } from "lucide-react"
-import { projects } from "@/lib/data" // Importing your real data here
+import { projects } from "@/lib/data" 
+
+// --- HELPER: Handle Drive Links ---
+const getRenderableVideoUrl = (url: string) => {
+  // Check if it's a Google Drive link
+  if (url.includes("drive.google.com")) {
+    // Convert "/view" or "/sharing" to "/preview" for embedding
+    return url.replace(/\/view.*$/, "/preview").replace(/\/sharing.*$/, "/preview")
+  }
+  return url
+}
+
+const isDriveVideo = (url: string) => url.includes("drive.google.com")
 
 export function SignatureProjects() {
-  // --- STATE MANAGEMENT ---
-  const [selectedClient, setSelectedClient] = useState<any>(null) // Level 1 -> 2
-  const [viewMode, setViewMode] = useState<"menu" | "photos" | "videos" | null>(null) // Level 2 -> 3
+  const [selectedClient, setSelectedClient] = useState<any>(null)
+  const [viewMode, setViewMode] = useState<"menu" | "photos" | "videos" | null>(null)
 
-  // --- HANDLERS ---
-  
-  // Reset everything to go back to main grid
   const handleBackToMain = () => {
     setSelectedClient(null)
     setViewMode(null)
   }
 
-  // Go back from Gallery to Choice Menu
   const handleBackToMenu = () => {
     setViewMode("menu")
   }
@@ -28,7 +35,7 @@ export function SignatureProjects() {
     <section id="projects" className="py-16 sm:py-24 relative min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header - Dynamically updates based on selection */}
+        {/* Header */}
         <div className="mb-12">
            {!selectedClient ? (
              <SectionHeading
@@ -56,7 +63,7 @@ export function SignatureProjects() {
 
         <AnimatePresence mode="wait">
           
-          {/* --- VIEW 1: CLIENT GRID (DEFAULT) --- */}
+          {/* VIEW 1: CLIENT GRID */}
           {!selectedClient && (
             <motion.div
               key="client-grid"
@@ -75,7 +82,6 @@ export function SignatureProjects() {
                   }}
                   className="group cursor-pointer relative aspect-[3/4] rounded-xl overflow-hidden glass border border-white/10"
                 >
-                  {/* Handle cases where coverImage might be missing */}
                   <img
                     src={client.coverImage || "/placeholder.svg"}
                     alt={client.title}
@@ -91,7 +97,7 @@ export function SignatureProjects() {
             </motion.div>
           )}
 
-          {/* --- VIEW 2: CHOICE MENU (PHOTOS OR VIDEOS) --- */}
+          {/* VIEW 2: CHOICE MENU */}
           {selectedClient && viewMode === "menu" && (
             <motion.div
               key="choice-menu"
@@ -100,7 +106,7 @@ export function SignatureProjects() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8"
             >
-              {/* Option A: Photography */}
+              {/* Photos Button */}
               <div 
                 onClick={() => setViewMode("photos")}
                 className="group cursor-pointer relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border bg-card hover:border-primary transition-all"
@@ -109,18 +115,16 @@ export function SignatureProjects() {
                   <div className="p-4 rounded-full bg-white/10 backdrop-blur-md group-hover:scale-110 transition-transform">
                     <ImageIcon className="w-12 h-12 text-foreground" />
                   </div>
-                  <h3 className="text-2xl font-bold">Graphic</h3>
+                  <h3 className="text-2xl font-bold">Photographs</h3>
                   <p className="text-muted-foreground">{selectedClient.photos?.length || 0} items</p>
                 </div>
-                {/* Background preview using the first photo or cover */}
                 <img 
                   src={selectedClient.photos?.[0] || selectedClient.coverImage} 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 blur-sm group-hover:blur-0 transition-all duration-500"
-                  alt="Photography Preview"
                 />
               </div>
 
-              {/* Option B: Videos */}
+              {/* Videos Button */}
               <div 
                 onClick={() => setViewMode("videos")}
                 className="group cursor-pointer relative h-64 md:h-96 rounded-2xl overflow-hidden border border-border bg-card hover:border-primary transition-all"
@@ -132,13 +136,12 @@ export function SignatureProjects() {
                   <h3 className="text-2xl font-bold">Videos</h3>
                   <p className="text-muted-foreground">{selectedClient.videos?.length || 0} items</p>
                 </div>
-                 {/* Background preview */}
                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 opacity-100 group-hover:opacity-80 transition-all" />
               </div>
             </motion.div>
           )}
 
-          {/* --- VIEW 3: GALLERIES --- */}
+          {/* VIEW 3: GALLERIES */}
           
           {/* 3A: PHOTO GALLERY */}
           {selectedClient && viewMode === "photos" && (
@@ -163,13 +166,13 @@ export function SignatureProjects() {
               </div>
               {(!selectedClient.photos || selectedClient.photos.length === 0) && (
                 <div className="text-center py-12 text-muted-foreground">
-                  No Graphic uploaded for this client yet.
+                  No photographs uploaded for this client yet.
                 </div>
               )}
             </motion.div>
           )}
 
-          {/* 3B: VIDEO GALLERY */}
+          {/* 3B: VIDEO GALLERY (UPDATED FOR DRIVE) */}
           {selectedClient && viewMode === "videos" && (
             <motion.div
               key="video-gallery"
@@ -183,14 +186,26 @@ export function SignatureProjects() {
                     key={idx}
                     className="aspect-video rounded-xl overflow-hidden bg-black shadow-xl"
                   >
-                    <video 
-                      controls 
-                      className="w-full h-full"
-                      poster={selectedClient.coverImage} 
-                    >
-                      <source src={video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                    {isDriveVideo(video) ? (
+                      /* GOOGLE DRIVE VIDEO (IFRAME) */
+                      <iframe 
+                        src={getRenderableVideoUrl(video)} 
+                        className="w-full h-full" 
+                        allow="autoplay" 
+                        allowFullScreen
+                        title={`Client Video ${idx}`}
+                      />
+                    ) : (
+                      /* NORMAL VIDEO FILE (MP4/WEBM) */
+                      <video 
+                        controls 
+                        className="w-full h-full"
+                        poster={selectedClient.coverImage} 
+                      >
+                        <source src={video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
                   </motion.div>
                 ))}
               </div>
