@@ -967,7 +967,8 @@ export const projects = [
       "/K Singh Vision Classes/FB_IMG_1769425637380.jpg",
       "/K Singh Vision Classes/FB_IMG_1769425644071.jpg"
     ],
-    videos: []
+    videos: [
+    ]
   },
   {
     id: 15,
@@ -1050,7 +1051,18 @@ export const projects = [
       "/Vedanta computer classes/FB_IMG_1769429330622.jpg",
       "/Vedanta computer classes/FB_IMG_1769429336391.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/195oTebKFxs0ZfJxlSSxPIF9Gag6UE4IG/view?usp=drive_link",
+      "https://drive.google.com/file/d/1dQ8jDSbA5-ldeQ3EiSHYLgA-O6POatUD/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wXZXBSMso7ionBqgPt3H02FcpbJ7jhpR/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bKFa3w985iq-FKKii2oT4LKj9TpP1bGh/view?usp=drive_link",
+      "https://drive.google.com/file/d/1sNR083bja3uXJi51JT3fStytxHO0yrvt/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ZtyAVGRESj-UR-qL6-P60yi3KL_8KCSC/view?usp=drive_link",
+      "https://drive.google.com/file/d/17xQUrvZslJH8GD-c05agDBFmUyB3RaqN/view?usp=drive_link",
+      "https://drive.google.com/file/d/1vMCW6V5_KO9dAe5yh3pprn_TW25z1_7I/view?usp=drive_link",
+      "https://drive.google.com/file/d/15bGpEcmX4NSO4pwdmbODBoWyUATl-54B/view?usp=drive_link",
+      "https://drive.google.com/file/d/1jSQfmgh-OqT6H04drUFWFvNIbROTxvsg/view?usp=drive_link",
+    ]
   },
   {
     id: 16,
@@ -1075,7 +1087,20 @@ export const projects = [
       "/Ascolta IAS/FB_IMG_1769426993374.jpg",
       "/Ascolta IAS/FB_IMG_1769427011600.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1xKy3SMH-QRAjN6z5DmOfK1R7ABg5kkIR/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ExNCLJyiqAFrgNFYG8iRoCB9tcQ7ngcz/view?usp=drive_link",
+      "https://drive.google.com/file/d/1by6-5-B17j3gw8Kw0DmAIbhNfLG8siEz/view?usp=drive_link",
+      "https://drive.google.com/file/d/13dLMzKa8WxBZumTVY-SUfQmvOkZsY92k/view?usp=drive_link",
+      "https://drive.google.com/file/d/13RZKueE83MJPy-lhb8CcSoDnwDGZjM3Z/view?usp=drive_link",
+      "https://drive.google.com/file/d/1EpdOw7Np7bPO5G2Xl7ZM4_Tr1nf2jjd0/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Fz2CvQci-op4weQf0djgQ9N1opxbcg54/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_U5-eVwL1AJK2EBESq7BcipXkWqrHMPz/view?usp=drive_link",
+      "https://drive.google.com/file/d/1VFsbbqRAbyhuQ0gcV1pioOhyyQqnrFqY/view?usp=drive_link",
+      "https://drive.google.com/file/d/1QNz5qJcnJNzetZ_xdBlszfSXiTdwxcLX/view?usp=drive_link",
+      "https://drive.google.com/file/d/1cE6jLRsIJEhKCulEJYDtY49unDiBe5vi/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Qd1slL-CtGkWUdNUCyO7Pg1nCWvR3e3M/view?usp=drive_link",
+    ]
   },
 ]
 
