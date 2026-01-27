@@ -639,7 +639,7 @@ export const projects = [
     title: "Sankalp Civil Services",
     category: "Coaching", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/संकल्प सिविल सर्विसेज/FB_IMG_1769428313636.jpg",
+    coverImage: "/संकल्प सिविल सर्विसेज/ChatGPT Image Jan 27, 2026, 02_50_31 PM.png",
     photos: [
       "/संकल्प सिविल सर्विसेज/FB_IMG_1769428313636.jpg",
       "/संकल्प सिविल सर्विसेज/FB_IMG_1769428318208.jpg",
@@ -786,7 +786,7 @@ export const projects = [
     title: "K Singh Vision Classes",
     category: "Coaching", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/K Singh Vision Classes/FB_IMG_1769425264966.jpg",
+    coverImage: "/K Singh Vision Classes/ChatGPT Image Jan 27, 2026, 02_46_38 PM.png",
     photos: [
       "/K Singh Vision Classes/FB_IMG_1769425264966.jpg",
       "/K Singh Vision Classes/FB_IMG_1769425272831.jpg",
