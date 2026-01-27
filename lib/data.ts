@@ -94,7 +94,7 @@ export const projects = [
        "/Foundation/622346270_17894828052399589_7501341507550384726_n.webp"
     ],
     videos: [
-       "/client1-video1.mp4"
+       "https://drive.google.com/file/d/1WcyzAvv5w0ZGdjzXFELUY2PDfYqWSjQS/view?usp=drive_link"
     ]
   },
  {
@@ -839,7 +839,6 @@ export const projects = [
     // Using the first image as the cover
     coverImage: "/Vedanta computer classes/ChatGPT Image Jan 27, 2026, 03_47_56 PM.png",
     photos: [
-      "/Vedanta computer classes/FB_IMG_1769428891520.jpg",
       "/Vedanta computer classes/FB_IMG_1769429182063.jpg",
       "/Vedanta computer classes/FB_IMG_1769429183685.jpg",
       "/Vedanta computer classes/FB_IMG_1769429191640.jpg",
