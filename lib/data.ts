@@ -920,7 +920,7 @@ export const projects = [
     title: "Ascolta IAS",
     category: "Design", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Ascolta IAS/FB_IMG_1769426857765.jpg",
+    coverImage: "/Ascolta IAS/ChatGPT Image Jan 27, 2026, 04_03_48 PM.png",
     photos: [
       "/Ascolta IAS/FB_IMG_1769426857765.jpg",
       "/Ascolta IAS/FB_IMG_1769426862297.jpg",
