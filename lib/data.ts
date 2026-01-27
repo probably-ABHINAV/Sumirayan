@@ -608,7 +608,7 @@ export const projects = [
     title: "Gorkhnath IAD",
     category: "Political Leader", // You might want to change this to "Education" or "Art" depending on the client
     // Using the first image as the cover
-    coverImage: "/Gorkhnath IAD/FB_IMG_1769426145550.jpg",
+    coverImage: "/Gorkhnath IAD/ChatGPT Image Jan 27, 2026, 03_43_27 PM.png",
     photos: [
       "/Gorkhnath IAD/FB_IMG_1769426145550.jpg",
       "/Gorkhnath IAD/FB_IMG_1769426471522.jpg",
@@ -669,7 +669,7 @@ export const projects = [
     title: "Total Concept Education",
     category: "Education", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Total Concept Education/FB_IMG_1769429350034.jpg",
+    coverImage: "/Total Concept Education/ChatGPT Image Jan 27, 2026, 03_44_30 PM.png",
     photos: [
       "/Total Concept Education/FB_IMG_1769429350034.jpg",
       "/Total Concept Education/FB_IMG_1769429355819.jpg",
@@ -711,7 +711,7 @@ export const projects = [
     title: "Ampush Works",
     category: "Startup", // Or "Construction" / "Engineering"
     // Using the first image as the cover
-    coverImage: "/Ampush works/FB_IMG_1769426181036.jpg",
+    coverImage: "/Ampush works/ChatGPT Image Jan 27, 2026, 03_50_31 PM.png",
     photos: [
       "/Ampush works/FB_IMG_1769426181036.jpg",
       "/Ampush works/FB_IMG_1769426184379.jpg",
@@ -755,7 +755,7 @@ export const projects = [
     title: "Elite Institute",
     category: "Education", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Elite institute/FB_IMG_1769425573163.jpg",
+    coverImage: "/Elite institute/ChatGPT Image Jan 27, 2026, 03_46_09 PM.png",
     photos: [
       "/Elite institute/FB_IMG_1769425573163.jpg",
       "/Elite institute/FB_IMG_1769425608279.jpg",
@@ -837,7 +837,7 @@ export const projects = [
     title: "Vedanta Computer Classes",
     category: "Classes", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Vedanta computer classes/FB_IMG_1769428891520.jpg",
+    coverImage: "/Vedanta computer classes/ChatGPT Image Jan 27, 2026, 03_47_56 PM.png",
     photos: [
       "/Vedanta computer classes/FB_IMG_1769428891520.jpg",
       "/Vedanta computer classes/FB_IMG_1769429182063.jpg",
