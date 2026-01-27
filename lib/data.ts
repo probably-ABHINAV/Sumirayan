@@ -93,13 +93,7 @@ export const projects = [
        "/Foundation/621411602_17894638944399589_3102267917110965732_n.webp",
        "/Foundation/622346270_17894828052399589_7501341507550384726_n.webp"
     ],
-    videos: [<video controls width="100%">
-  <source
-    src="https://drive.google.com/file/d/1WcyzAvv5w0ZGdjzXFELUY2PDfYqWSjQS/view?usp=drive_link"
-    type="video/mp4"
-  />
-</video>
-    ]
+    videos: []
   },
  {
     id: 2,
