@@ -93,7 +93,19 @@ export const projects = [
        "/Foundation/621411602_17894638944399589_3102267917110965732_n.webp",
        "/Foundation/622346270_17894828052399589_7501341507550384726_n.webp"
     ],
-    videos: ["https://drive.google.com/file/d/1_blRjrWmBx20XxSkizjyXErhO83A9Kxi/view?usp=sharing"]
+    videos: [
+      "https://drive.google.com/file/d/1_blRjrWmBx20XxSkizjyXErhO83A9Kxi/view?usp=sharing",
+      "https://drive.google.com/file/d/1S82ldFZzuzwk3waYp5tcaDfI0irjNMOn/view?usp=drive_link",
+      "https://drive.google.com/file/d/1J74Jbb4nkQvrbxpU0NJ6ZS6PivA5hFQD/view?usp=drive_link",
+      "https://drive.google.com/file/d/1crEeqom-Q4K9cwnnZT5CYgHgvuFB9dz9/view?usp=drive_link",
+      "https://drive.google.com/file/d/1kllYoWQ2i3t_7RqXczI3pyNy4fvmEs3f/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-xMood_MwkhO8lzIF6tvzVBdeYSc9E7p/view?usp=drive_link",
+      "https://drive.google.com/file/d/18GE_wXdffBwZBeXj5YdDKk78-9kE2Ff3/view?usp=drive_link",
+      "https://drive.google.com/file/d/1gKH4LypnL5j8FEV4gqZBZw2G44Fim3CL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1nJDErJUObmjE4a1HlA4Z9u-RIkI2Op35/view?usp=drive_link",
+      "https://drive.google.com/file/d/1uMdQaoQ0_dAPrktx3YIw5ahRkFQwm-sq/view?usp=drive_link",
+      "https://drive.google.com/file/d/1oE9GG7FjH36tF6A9QCVH4k6EAmABokYo/view?usp=drive_link", 
+  ]
   },
  {
     id: 2,
