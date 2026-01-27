@@ -115,7 +115,7 @@ export function SignatureProjects() {
                   <div className="p-4 rounded-full bg-white/10 backdrop-blur-md group-hover:scale-110 transition-transform">
                     <ImageIcon className="w-12 h-12 text-foreground" />
                   </div>
-                  <h3 className="text-2xl font-bold">Photographs</h3>
+                  <h3 className="text-2xl font-bold">Creative Graphics</h3>
                   <p className="text-muted-foreground">{selectedClient.photos?.length || 0} items</p>
                 </div>
                 <img 
@@ -133,7 +133,7 @@ export function SignatureProjects() {
                   <div className="p-4 rounded-full bg-white/10 backdrop-blur-md group-hover:scale-110 transition-transform">
                     <Play className="w-12 h-12 text-foreground ml-1" />
                   </div>
-                  <h3 className="text-2xl font-bold">Videos</h3>
+                  <h3 className="text-2xl font-bold">Creative Videos</h3>
                   <p className="text-muted-foreground">{selectedClient.videos?.length || 0} items</p>
                 </div>
                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 opacity-100 group-hover:opacity-80 transition-all" />
