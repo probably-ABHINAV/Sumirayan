@@ -915,6 +915,31 @@ export const projects = [
     ],
     videos: []
   },
+  {
+    id: 16,
+    title: "Ascolta IAS",
+    category: "Design", // Or "Education"
+    // Using the first image as the cover
+    coverImage: "/Ascolta IAS/FB_IMG_1769426857765.jpg",
+    photos: [
+      "/Ascolta IAS/FB_IMG_1769426857765.jpg",
+      "/Ascolta IAS/FB_IMG_1769426862297.jpg",
+      "/Ascolta IAS/FB_IMG_1769426868519.jpg",
+      "/Ascolta IAS/FB_IMG_1769426872524.jpg",
+      "/Ascolta IAS/FB_IMG_1769426877859.jpg",
+      "/Ascolta IAS/FB_IMG_1769426885444.jpg",
+      "/Ascolta IAS/FB_IMG_1769426903458.jpg",
+      "/Ascolta IAS/FB_IMG_1769426907728.jpg",
+      "/Ascolta IAS/FB_IMG_1769426910299.jpg",
+      "/Ascolta IAS/FB_IMG_1769426912672.jpg",
+      "/Ascolta IAS/FB_IMG_1769426914940.jpg",
+      "/Ascolta IAS/FB_IMG_1769426958048.jpg",
+      "/Ascolta IAS/FB_IMG_1769426975437.jpg",
+      "/Ascolta IAS/FB_IMG_1769426993374.jpg",
+      "/Ascolta IAS/FB_IMG_1769427011600.jpg"
+    ],
+    videos: []
+  },
 ]
 
 export const testimonials = [
