@@ -104,7 +104,13 @@ export const projects = [
       "https://drive.google.com/file/d/1gKH4LypnL5j8FEV4gqZBZw2G44Fim3CL/view?usp=drive_link",
       "https://drive.google.com/file/d/1nJDErJUObmjE4a1HlA4Z9u-RIkI2Op35/view?usp=drive_link",
       "https://drive.google.com/file/d/1uMdQaoQ0_dAPrktx3YIw5ahRkFQwm-sq/view?usp=drive_link",
-      "https://drive.google.com/file/d/1oE9GG7FjH36tF6A9QCVH4k6EAmABokYo/view?usp=drive_link", 
+      "https://drive.google.com/file/d/1oE9GG7FjH36tF6A9QCVH4k6EAmABokYo/view?usp=drive_link",
+      "https://drive.google.com/file/d/1NIpGf1Hb-fXR0IW-mTcdJtkQMPcpjpuz/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GTxU-EHiX2c7u7ITO2sWf46OxKdu2nOK/view?usp=drive_link",
+      "https://drive.google.com/file/d/1zrr8036mg8NrsNUm10juOG6p_-ePJPw-/view?usp=drive_link",
+      "https://drive.google.com/file/d/19vKFq_sBxJoe97R-qV8ziEBBxsUZ0pwo/view?usp=drive_link",
+      
+      
   ]
   },
  {
@@ -196,7 +202,19 @@ export const projects = [
       "/Archbuilts/FB_IMG_1769428909084.jpg",
       "/Archbuilts/FB_IMG_1769428910512.jpg"
     ],
-    videos: ["https://drive.google.com/drive/folders/1UGG5ostnKZYQGWhQgOdx5RLZL9EDKth2?usp=drive_link"]
+    videos: [
+      "https://drive.google.com/file/d/1yLlcU2HOyZagCs5vvqQzNgR1lWfvJbJZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1CLlkwwZiDsEr3gDy_odA1pIJ8l3r_Q-w/view?usp=drive_link",
+      "https://drive.google.com/file/d/1YRagmXQPiJ6AHjTN9oPqaicEGvTdi7Uz/view?usp=drive_link",
+      "https://drive.google.com/file/d/1eG-leD7YRdKaMqUtJCsT4fmyHxY8cQSk/view?usp=drive_link",
+      "https://drive.google.com/file/d/1OkuteeLp5w9fyCsnAyQgHHrsvmiRFR5W/view?usp=drive_link",
+      "https://drive.google.com/file/d/1eG-leD7YRdKaMqUtJCsT4fmyHxY8cQSk/view?usp=drive_link",
+      "https://drive.google.com/file/d/1dgcCFznSkioyB5ZNy1HgDbdjYA_AIWLp/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_bNmBkE6PJNo5y05y5k-rDUoZtIVlnEB/view?usp=drive_link",
+      "https://drive.google.com/file/d/1F-D9i3IftKtrwFnroIZ7zRXZXv8ZZSud/view?usp=drive_link",
+      "https://drive.google.com/file/d/11L6pQ94ExXag0TrMT9pzliozmbSwSCPy/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-DjcMJUr5M2liBPsKu-3IgF4f-D5AdQv/view?usp=drive_link",
+    ]
   },
   {
     id: 3,
@@ -298,7 +316,27 @@ export const projects = [
       "/Rexine House/FB_IMG_1769427867930.jpg",
       "/Rexine House/FB_IMG_1769427869583.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1WckdjK-0fQ1wBUcNuaCC_DXQdEp02QZe/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wJ2R2L8wIKnjUBTNhr9J1z6nLykf_ZVv/view?usp=drive_link",
+      "https://drive.google.com/file/d/1MVjw2tX8qdR2bCoLFExmwWWfv6dl4LqK/view?usp=drive_link",
+      "https://drive.google.com/file/d/1y0dMWxy6d7_FTXbXm4VlIhqHhWuzrlzL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1FBXz8TL_ZYUkc9Q2BC2HwJpsfLu2yOSA/view?usp=drive_link",
+      "https://drive.google.com/file/d/1nw39AZGidwql3UuKtTL2TD52oFWbwSZn/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WD1CHuyDE3KzOGUgszVW3sSkoo0-0hiN/view?usp=drive_link",
+      "https://drive.google.com/file/d/1fcLzxHsB4Ac2QqPCr4MNne7AHIpYm2Aa/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GN2eAdqchl0wR7Ahnt4N91oZ1jIKCKtL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1zJPWpTCnR4-TLnMxkN4q_BtBF3boAZ_A/view?usp=drive_link",
+      "https://drive.google.com/file/d/1CqlMgVcn36n-E092py_lUfOTs-ONt9dK/view?usp=drive_link",
+      "https://drive.google.com/file/d/10fXUgrPU5dLxS1VK-DSWJa92J5Uy2D6k/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bnOGJ5zd0rdM71jaiDniqS8D6D4O07mc/view?usp=drive_link",
+      "https://drive.google.com/file/d/1N1il7BAqh4Xj_iTzM96cpc3wkePHjzDP/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_ERoIBv1pgyzmpn2jZ2pCGKp6xPbOfIU/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Uq-OthkvcYsdkzYqOCb4Au9N5tav_OJd/view?usp=drive_link",
+      "https://drive.google.com/file/d/1pKJkcDMVKj8f1dEY10DaPBQRX446m2V_/view?usp=drive_link",
+      "https://drive.google.com/file/d/1zDQRT4cm6k5EVgLqIKS0GIPY2O2e66PL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1fChIazRvE8fNFqff1F3n1g0ssCQGdOBG/view?usp=drive_link",
+    ]
   },
   {
     id: 4,
@@ -362,7 +400,23 @@ export const projects = [
       "/Birdcarts/FB_IMG_1769429948670.jpg",
       "/Birdcarts/FB_IMG_1769429950336.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1llEGxXC3aAqnHPAlTLfKqd6Zn6I4UKwt/view?usp=drive_link",
+      "https://drive.google.com/file/d/1PjOhE7VkzZ_bT1fTN2UAZJpYOCbDFWmm/view?usp=drive_link",
+      "https://drive.google.com/file/d/1XWONiAL5gE7fFZw7rNQP35pgvX-p_xw9/view?usp=drive_link",
+      "https://drive.google.com/file/d/1uH_rkUhVKaoPAeZujMh1drOk-6r9aVqC/view?usp=drive_link",
+      "https://drive.google.com/file/d/1IvkFN3Ue9TFtF-U7Nlwpm5Z6ZBTnFJsD/view?usp=drive_link",
+      "https://drive.google.com/file/d/16TibfQsjNbDHJN3He9lRrIloVbc_AIEz/view?usp=drive_link",
+      "https://drive.google.com/file/d/1EdJUpSRYOh-G6EFEspSjXFKsfxsIAVzi/view?usp=drive_link",
+      "https://drive.google.com/file/d/1meKniRJuRGVFbxF9K3VgtqKShqkC9H_T/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Q_KH54xVwWpAXsqSHHIfwZgkPjDJqNUn/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Oo7UNHTtHsHH2Y84DGPIHgNpu5eQKJqA/view?usp=drive_link",
+      "https://drive.google.com/file/d/1XWONiAL5gE7fFZw7rNQP35pgvX-p_xw9/view?usp=drive_link",
+      "https://drive.google.com/file/d/19zaZWvWXHhojH1UOwCuq3gsa0YBocf6M/view?usp=drive_link",
+      "https://drive.google.com/file/d/14Vue6ckeKRFgmoZgZlDtosTKLVuKP5YY/view?usp=drive_link",
+      "https://drive.google.com/file/d/1qxPMP6zJ6nrAvsSW0c8mOzCiVZDaAwnv/view?usp=drive_link",
+      "https://drive.google.com/file/d/1UMQWg3NQXLRhhnC9L7lf6VjOx93ismoD/view?usp=drive_link",
+    ]
   },
   {
     id: 5,
@@ -432,7 +486,15 @@ export const projects = [
       "/DR. Sonali Gupta/FB_IMG_1769428597302.jpg",
       "/DR. Sonali Gupta/FB_IMG_1769428600529.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/16tIrZljPgDR95v6r__uYOUVyuLaus3hj/view?usp=drive_link",
+      "https://drive.google.com/file/d/1niqkPCMl0TlgNCJs4FSmId0-Rueu_qlJ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1VsqriUzBkFT2pu3CNm6nsgsGerJxL7kH/view?usp=drive_link",
+      "https://drive.google.com/file/d/1VJ2tzZ9yWsgKam7zlX2Efh7YpkEPaJW1/view?usp=drive_link",
+      "https://drive.google.com/file/d/1J6tNZ5W7FzwFb7p0YXfQnFc4qbgJeygh/view?usp=drive_link",
+      "https://drive.google.com/file/d/1FfwcttctpfNrhCwi7HZ80aRD6lAdDFYX/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Dc1ahO91n1kk9N2bgNtxUGuWNddNuNiE/view?usp=drive_link",
+    ]
   },
   {
     id: 6,
@@ -523,7 +585,20 @@ export const projects = [
       "/Yogesh Artitect and interior/FB_IMG_1769435778747.jpg",
       "/Yogesh Artitect and interior/FB_IMG_1769435779960.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1zNLN-HndruUdvu2aDmBJ_qnLstCgya_4/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wfzRc-luVrxTFZZZXrC7pzn8--jbPY5r/view?usp=drive_link",
+      "https://drive.google.com/file/d/1V8So5295sOWvQslIR_jg7T1oCzIYyuWT/view?usp=drive_link",
+      "https://drive.google.com/file/d/1GKHhrmYiHNZTWGfi_B9RmTaFdTCGYhQu/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ixJ9rzZJhRYOIzPnDT15qrBNUrYqtEv0/view?usp=drive_link",
+      "https://drive.google.com/file/d/1S99TeqTn614OJBKMsjAeT4t1yg-mUjIC/view?usp=drive_link",
+      "https://drive.google.com/file/d/1yP4mDStqDvSbKKQ2dSljjZ70IuG5g5iT/view?usp=drive_link",
+      "https://drive.google.com/file/d/16YJtwWOvmL1KyQCRmAwaUrsE_ZZjoGTm/view?usp=drive_link",
+      "https://drive.google.com/file/d/1g36cP6Qbo5XdrDxTHJW55MS7EXesPGFE/view?usp=drive_link",
+      "https://drive.google.com/file/d/17Hhkr05SecnHtvcIq9hcBC1IaCgyO8Di/view?usp=drive_link",
+      "https://drive.google.com/file/d/1fZdA3HDV_uYDU0JrXroUTi5_WSpH9kYL/view?usp=drive_link",
+      "https://drive.google.com/file/d/1UHTr9T14ad5_ouOwoYy6C6dUKvyhw2M3/view?usp=drive_link",
+    ]
   },
   {
     id: 7,
@@ -555,7 +630,22 @@ export const projects = [
       "/Raj Automobiles Ara/FB_IMG_1769429995117.jpg",
       "/Raj Automobiles Ara/FB_IMG_1769430002100.jpg"
     ],
-    videos: []
+    videos: [
+      
+      "https://drive.google.com/file/d/111R4OxIhLEAlyC0QOFk4XC0RSU8xkXNv/view?usp=drive_link",
+      "https://drive.google.com/file/d/11FhCMHw_VX3qSqJJQSUtB4UvTkIiJcyM/view?usp=drive_link",
+      "https://drive.google.com/file/d/11MS57LsWtq3XI23IRmIZZ8mqrxhkkYBK/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WwzbE5Wi9WdcPocFtbDjpmWxq9WMEJbj/view?usp=drive_link",
+      "https://drive.google.com/file/d/1wpkAgtXyhn_NKlPrNC7_baMCt-9SELXR/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Rjz9nnXJTLBVhTwuBYKIf7VxmfAknJKV/view?usp=drive_link",
+      "https://drive.google.com/file/d/1JFtGw-8u0HND6Hzvd9PyNrDKN3C--2zO/view?usp=drive_link",
+      "https://drive.google.com/file/d/1AQNDZlXKFGaJj28_PFOvv-m5SZM-j2gt/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ufrpbxo1MWY_rs59r3sa2AHd1DK9ocyp/view?usp=drive_link",
+      "https://drive.google.com/file/d/1kozbksbQKXCllvYdJ1mYsrpX64-mtZT4/view?usp=drive_link",
+      "https://drive.google.com/file/d/13zGLgNHM_rmjdzF8CHVKXafESHYmNYD_/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bGLyQPtyInUSzVy3z_j5jcXJKgI7twqy/view?usp=drive_link",
+      
+    ]
   },
   {
     id: 8,
@@ -611,7 +701,19 @@ export const projects = [
       "/One step education/FB_IMG_1769430186497.jpg",
       "/One step education/FB_IMG_1769430191153.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/11sGcLDQUjqSCZ1GXDXx9Q7nq04qmBNCI/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Md8JNE40n31YBnRqiYbZyF1KnL7Jv1lO/view?usp=drive_link",
+       "https://drive.google.com/file/d/10duUcLZmRj8nzarHYrSr1v483dw5kXCf/view?usp=drive_link",
+      "https://drive.google.com/file/d/163DRtRmk6QidbSoMF9kwSXTSZnO5Wk9c/view?usp=drive_link",
+       "https://drive.google.com/file/d/1pmE5szvmEbDQDsIRM8oCwrHeFS3GrouO/view?usp=drive_link",
+      "https://drive.google.com/file/d/1YOdwSTs6gUluDy_5v7YTNHISJGnlTh1S/view?usp=drive_link",
+       "https://drive.google.com/file/d/1j3yF_5XchlXHBzwG2bDQS1GHn7cPh9NO/view?usp=drive_link",
+      "https://drive.google.com/file/d/1c8ngda3tOwuhheJnpBxxRQchpdwDJ_cD/view?usp=drive_link",
+       "https://drive.google.com/file/d/1VnTGmlbQ24kdu-BJ_AGx5jEYzYOZ7c8E/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-ClnJXTGSTbGWxFw1MDCfm4KoPxvDOLy/view?usp=drive_link",
+      
+    ]
   },
   {
     id: 9,
@@ -642,7 +744,22 @@ export const projects = [
       "/Gorkhnath IAD/FB_IMG_1769426672157.jpg",
       "/Gorkhnath IAD/FB_IMG_1769426701333.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1OdQ6aNRyZHS3Z3ZFuHPYXvip0j9RQ-g4/view?usp=drive_link",
+      "https://drive.google.com/file/d/18rq2fsIv0BAkaTkNMPMPb93ee_wSME3L/view?usp=drive_link",
+      "https://drive.google.com/file/d/1m-9NQh0dKfgrQvFM2LdgbaBe6uono3Ys/view?usp=drive_link",
+      "https://drive.google.com/file/d/1T5qEO39ZC66Q0UOd4FnKtB9Dtc9uJpB-/view?usp=drive_link",
+      "https://drive.google.com/file/d/1OdQ6aNRyZHS3Z3ZFuHPYXvip0j9RQ-g4/view?usp=drive_link",
+      "https://drive.google.com/file/d/1MCn_bQtctM56urR17ZVFunIM7N1KP4qG/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Nw1rUERAWySZzRE9tckV_JV1tmJCQgUN/view?usp=drive_link",
+      "https://drive.google.com/file/d/14tpYUQ4e9Dv4a598o05bhWWyq60zOGkp/view?usp=drive_link",
+      "https://drive.google.com/file/d/1rhneKKXGxAs2iwoniQijLY7HFjRMZefX/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Rq1ye2NSymyUzcTDoFQO95VvgWX_RjgP/view?usp=drive_link",
+      "https://drive.google.com/file/d/1PRzNMaJfmCTP5b3HLNNWnH5tXQndp9zy/view?usp=drive_link",
+      "https://drive.google.com/file/d/1E8JW5ZiBXdeMT7TUyfDzLzVxGcciO1ZI/view?usp=drive_link",
+      "https://drive.google.com/file/d/1YEGelelyEQKNjSSNZFnTfE3tkYo_S_9c/view?usp=drive_link",
+      "https://drive.google.com/file/d/1C7ESyTjWXHQkIB5UzFh8rjQKzob-PqJI/view?usp=drive_link",
+    ]
   },
   {
     id: 10,
@@ -672,7 +789,17 @@ export const projects = [
       "/संकल्प सिविल सर्विसेज/FB_IMG_1769428410698.jpg",
       "/संकल्प सिविल सर्विसेज/FB_IMG_1769428428392.jpg"
     ],
-    videos: []
+    videos: [
+      "https://drive.google.com/file/d/1ZEBgDn5TfQgaDwsLAReGe-wOQ4-eB0Ph/view?usp=drive_link",
+      "https://drive.google.com/file/d/1f8REcDEPQoonxWE1b1_xS3rezNO-P8U8/view?usp=drive_link",
+      "https://drive.google.com/file/d/1DeQhjsjmuw2w4niUy9hNYgPC86Mh9jaD/view?usp=drive_link",
+      "https://drive.google.com/file/d/1ikqMhpuPI--dlOcgxH2z79QJAwSrsUBo/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_tqmkBXW1v4AEvjahVWCKgAPXF2giXI1/view?usp=drive_link",
+      "https://drive.google.com/file/d/1HQpEpg_NwYbt2jHVJDlcNA8i5XalDQN-/view?usp=drive_link",
+      "https://drive.google.com/file/d/1oFH-dspL-PcdXnBG6iD6B-v_r88erez_/view?usp=drive_link",
+      "https://drive.google.com/file/d/1xX-KyQP7WCUPPRpPbzR5VbeiArN2Mt7b/view?usp=drive_link",
+      "https://drive.google.com/file/d/1lsR1CC7n3AqkMRyr3NRjAZlWugSUsNrp/view?usp=drive_link",
+    ]
   },
   {
     id: 11,
