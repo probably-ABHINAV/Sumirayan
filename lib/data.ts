@@ -1155,7 +1155,7 @@ export const projects = [
     title: "Bidya Mandir Classes",
     category: "Design", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/bidya mandir classes/FB_IMG_1769429593446.jpg",
+    coverImage: "/bidya mandir classes/ChatGPT Image Jan 28, 2026, 01_50_28 PM.png",
     photos: [
       "/bidya mandir classes/FB_IMG_1769429593446.jpg",
       "/bidya mandir classes/FB_IMG_1769429595125.jpg",
@@ -1200,7 +1200,7 @@ export const projects = [
     title: "Madan Sweets Lucknow",
     category: "Design", // Or "Product" / "Food"
     // Using the first image as the cover
-    coverImage: "/MADan sweets lakhnow/ChatGPT Image Jan 28, 2026, 01_50_28 PM.png",
+    coverImage: "/MADan sweets lakhnow/ChatGPT Image Jan 28, 2026, 01_46_16 PM.png",
     photos: [
       "/MADan sweets lakhnow/FB_IMG_1769425893287.jpg",
       "/MADan sweets lakhnow/FB_IMG_1769425895496.jpg",
@@ -1228,7 +1228,7 @@ export const projects = [
     title: "MCC Computer Classes Ara",
     category: "Design", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/MCC computer classes ara/FB_IMG_1769426151453.jpg",
+    coverImage: "/MCC computer classes ara/ChatGPT Image Jan 28, 2026, 02_02_56 PM.png",
     photos: [
       "/MCC computer classes ara/FB_IMG_1769426151453.jpg",
       "/MCC computer classes ara/FB_IMG_1769426153416.jpg",
