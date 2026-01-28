@@ -1067,7 +1067,7 @@ export const projects = [
   {
     id: 16,
     title: "Ascolta IAS",
-    category: "Design", // Or "Education"
+    category: "Education", // Or "Education"
     // Using the first image as the cover
     coverImage: "/Ascolta IAS/ChatGPT Image Jan 28, 2026, 01_50_33 PM.png",
     photos: [
@@ -1105,7 +1105,7 @@ export const projects = [
   {
     id: 17,
     title: "Bharat Vikash Sanjay Aanand Viklang Hospital",
-    category: "Design", // Or "Social Media" / "Healthcare"
+    category: "Hospital", // Or "Social Media" / "Healthcare"
     // Using the first image as the cover
     coverImage: "/Bharat vikash Sanjay Aanand Viklang hospital/ChatGPT Image Jan 28, 2026, 01_45_51 PM.png",
     photos: [
@@ -1153,7 +1153,7 @@ export const projects = [
   {
     id: 18,
     title: "Bidya Mandir Classes",
-    category: "Design", // Or "Education"
+    category: "Education", // Or "Education"
     // Using the first image as the cover
     coverImage: "/bidya mandir classes/ChatGPT Image Jan 28, 2026, 01_50_28 PM.png",
     photos: [
@@ -1198,7 +1198,7 @@ export const projects = [
   {
     id: 19,
     title: "Madan Sweets Lucknow",
-    category: "Design", // Or "Product" / "Food"
+    category: "Shop", // Or "Product" / "Food"
     // Using the first image as the cover
     coverImage: "/MADan sweets lakhnow/ChatGPT Image Jan 28, 2026, 01_46_16 PM.png",
     photos: [
@@ -1226,7 +1226,7 @@ export const projects = [
   {
     id: 20,
     title: "MCC Computer Classes Ara",
-    category: "Design", // Or "Education"
+    category: "Education", // Or "Education"
     // Using the first image as the cover
     coverImage: "/MCC computer classes ara/ChatGPT Image Jan 28, 2026, 02_02_56 PM.png",
     photos: [
