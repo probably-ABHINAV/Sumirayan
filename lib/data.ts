@@ -717,10 +717,10 @@ export const projects = [
   },
   {
     id: 9,
-    title: "Gorkhnath IAD",
+    title: "Gorkhnath IAS",
     category: "Political Leader", // You might want to change this to "Education" or "Art" depending on the client
     // Using the first image as the cover
-    coverImage: "/Gorkhnath IAD/ChatGPT Image Jan 27, 2026, 03_43_27 PM.png",
+    coverImage: "/Gorkhnath IAD/ChatGPT Image Jan 28, 2026, 02_16_45 PM.png",
     photos: [
       "/Gorkhnath IAD/FB_IMG_1769426145550.jpg",
       "/Gorkhnath IAD/FB_IMG_1769426471522.jpg",
