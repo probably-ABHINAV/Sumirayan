@@ -1069,7 +1069,7 @@ export const projects = [
     title: "Ascolta IAS",
     category: "Education", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Ascolta IAS/ChatGPT Image Jan 28, 2026, 01_50_33 PM.png",
+    coverImage: "/Ascolta IAS/ChatGPT Image Jan 28, 2026, 02_25_18 PM.png",
     photos: [
       "/Ascolta IAS/FB_IMG_1769426857765.jpg",
       "/Ascolta IAS/FB_IMG_1769426862297.jpg",
