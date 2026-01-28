@@ -1069,7 +1069,7 @@ export const projects = [
     title: "Ascolta IAS",
     category: "Design", // Or "Education"
     // Using the first image as the cover
-    coverImage: "/Ascolta IAS/ChatGPT Image Jan 27, 2026, 04_03_48 PM.png",
+    coverImage: "/Ascolta IAS/ChatGPT Image Jan 28, 2026, 01_50_33 PM.png",
     photos: [
       "/Ascolta IAS/FB_IMG_1769426857765.jpg",
       "/Ascolta IAS/FB_IMG_1769426862297.jpg",
@@ -1107,7 +1107,7 @@ export const projects = [
     title: "Bharat Vikash Sanjay Aanand Viklang Hospital",
     category: "Design", // Or "Social Media" / "Healthcare"
     // Using the first image as the cover
-    coverImage: "/Bharat vikash Sanjay Aanand Viklang hospital/FB_IMG_1769430271112.jpg",
+    coverImage: "/Bharat vikash Sanjay Aanand Viklang hospital/ChatGPT Image Jan 28, 2026, 01_45_51 PM.png",
     photos: [
       "/Bharat vikash Sanjay Aanand Viklang hospital/FB_IMG_1769430271112.jpg",
       "/Bharat vikash Sanjay Aanand Viklang hospital/FB_IMG_1769430271112_1.jpg",
@@ -1200,7 +1200,7 @@ export const projects = [
     title: "Madan Sweets Lucknow",
     category: "Design", // Or "Product" / "Food"
     // Using the first image as the cover
-    coverImage: "/MADan sweets lakhnow/FB_IMG_1769425893287.jpg",
+    coverImage: "/MADan sweets lakhnow/ChatGPT Image Jan 28, 2026, 01_50_28 PM.png",
     photos: [
       "/MADan sweets lakhnow/FB_IMG_1769425893287.jpg",
       "/MADan sweets lakhnow/FB_IMG_1769425895496.jpg",
