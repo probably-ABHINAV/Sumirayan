@@ -28,10 +28,12 @@ export function EventsLearnPreview() {
             </h2>
 
             {/* Description */}
-            <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base mb-6">
-              Kick-start your creative and AI-powered career with our industry-focused internship.
-              Learn, practice, and build real-world skills under expert guidance.
-            </p>
+           <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base mb-6">
+  Kick-start your creative and AI-powered career with our industry-focused 
+  <span className="font-semibold text-primary"> 3 Month Internship Program</span>.
+  Learn, practice, and build real-world skills under expert guidance.
+</p>
+
 
             {/* Internship Includes */}
             <div className="max-w-2xl mx-auto text-left mb-6">
