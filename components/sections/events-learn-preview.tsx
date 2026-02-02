@@ -54,9 +54,14 @@ export function EventsLearnPreview() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               
               {/* Enroll Button */}
-              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition">
-                🚀 Enroll Now
-              </button>
+              <a
+                href="https://forms.gle/MUT9ELyhHk8vQY4q8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/40 text-primary font-semibold hover:bg-primary/10 transition"
+              >
+                Enroll Now 
+              </a>
 
               {/* Drive Link */}
               <a
