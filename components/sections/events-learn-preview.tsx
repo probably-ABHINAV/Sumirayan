@@ -60,7 +60,7 @@ export function EventsLearnPreview() {
 
               {/* Drive Link */}
               <a
-                href="YOUR_DRIVE_LINK_HERE"
+                href="https://forms.gle/MUT9ELyhHk8vQY4q8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/40 text-primary font-semibold hover:bg-primary/10 transition"
