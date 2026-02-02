@@ -13,22 +13,61 @@ export function EventsLearnPreview() {
         >
           <div className="glass rounded-xl sm:rounded-2xl p-6 md:p-10 text-center">
 
+            {/* Badge */}
             <span className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-xs mb-4">
-              Announcement
+              Internship Program
             </span>
 
+            {/* Heading */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              New Event Coming Soon 🚀
+              Sumirayan 360° Creative & AI Internship 🚀
             </h2>
 
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base mb-6">
-              We’re preparing something exciting for you!  
-              Stay tuned for our upcoming event by <strong>Sumirayan Design Pvt. Ltd.</strong>  
-              Full details, dates, and registration will be announced very soon.
+            {/* Description */}
+            <p className="text-muted-foreground max-w-3xl mx-auto text-sm sm:text-base mb-6">
+              Kick-start your creative and AI-powered career with our industry-focused internship.
+              Learn, practice, and build real-world skills under expert guidance.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/40 text-primary font-semibold">
-              ⏳ Stay Connected
+            {/* Internship Includes */}
+            <div className="max-w-2xl mx-auto text-left mb-6">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm sm:text-base text-muted-foreground">
+                <li>🎨 Graphic Design</li>
+                <li>🎬 Video Editing</li>
+                <li>📸 Photography</li>
+                <li>🎥 Videography</li>
+                <li>✍️ Content Writing</li>
+                <li>📱 Social Media Handling</li>
+                <li>🤖 AI Prompting</li>
+                <li>📢 Marketing Communication</li>
+              </ul>
+            </div>
+
+            {/* Price */}
+            <div className="mb-6">
+              <span className="text-lg sm:text-xl font-semibold text-primary">
+                Internship Fee: ₹1,499 only
+              </span>
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              
+              {/* Enroll Button */}
+              <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition">
+                🚀 Enroll Now
+              </button>
+
+              {/* Drive Link */}
+              <a
+                href="YOUR_DRIVE_LINK_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/40 text-primary font-semibold hover:bg-primary/10 transition"
+              >
+                📂 View Internship Details
+              </a>
+
             </div>
 
           </div>
