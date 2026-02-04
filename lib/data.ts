@@ -1443,4 +1443,5 @@ export const navLinks = [
   { name: "Events", href: "/events" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
+  { name: "Sumirayan Team", href: "/contact" },
 ]
