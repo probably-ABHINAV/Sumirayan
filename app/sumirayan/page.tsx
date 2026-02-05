@@ -97,7 +97,7 @@ export default function Dashboard() {
         
         {/* --- SECTION 1: TODAY'S WORK --- */}
         <section>
-          <h1 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">Welcome To Work Dashboard</h1>
+          <h1 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">Welcome To Work Dashboard , Nishant</h1>
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <LayoutDashboard className="text-blue-500" /> Today's Work
           </h2>
@@ -114,15 +114,15 @@ export default function Dashboard() {
                 <div className="flex gap-3">
                   <button 
                     onClick={() => handleStatusChange(task.id, "failed")}
-                    className={`px-4 py-2 rounded-lg border font-medium text-sm transition-all flex items-center gap-2 ${task.status === 'failed' ? 'bg-red-500 text-white border-red-500' : 'border-red-500/30 text-red-500 hover:bg-red-500/10'}`}
+                    className={`px-2 py-1 rounded-lg border font-medium text-sm transition-all flex items-center gap-2 ${task.status === 'failed' ? 'bg-red-500 text-white border-red-500' : 'border-red-500/30 text-red-500 hover:bg-red-500/10'}`}
                   >
-                    <XCircle className="w-4 h-4" /> Not Done
+                    <XCircle className="w-2 h-2" /> Pending
                   </button>
                   <button 
                     onClick={() => handleStatusChange(task.id, "completed")}
-                    className={`px-4 py-2 rounded-lg border font-medium text-sm transition-all flex items-center gap-2 ${task.status === 'completed' ? 'bg-green-500 text-white border-green-500' : 'border-green-500/30 text-green-500 hover:bg-green-500/10'}`}
+                    className={`px-2 py-1 rounded-lg border font-medium text-sm transition-all flex items-center gap-2 ${task.status === 'completed' ? 'bg-green-500 text-white border-green-500' : 'border-green-500/30 text-green-500 hover:bg-green-500/10'}`}
                   >
-                    <CheckCircle2 className="w-4 h-4" /> Done
+                    <CheckCircle2 className="w-2 h-2" /> Done
                   </button>
                 </div>
               </div>
