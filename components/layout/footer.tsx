@@ -45,8 +45,8 @@ export function Footer() {
                 },
               ].map((social) => (
                 <a
-                  key={social.name}
-                  href="#"
+                  key={Instagram}
+                  href="https://www.instagram.com/sumirayan_design?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   aria-label={social.name}
                   className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
                 >
