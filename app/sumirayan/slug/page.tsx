@@ -16,12 +16,12 @@ interface Task {
   id: string
   title: string
   client: string
-  date: string // YYYY-MM-DD
+  date: string 
   status: Status
   remark?: string
 }
 
-// --- DATA SOURCE (Based on Slug) ---
+// --- DATA SOURCE ---
 const DATA_BY_SLUG: Record<string, { title: string, tasks: Task[] }> = {
   "video-editor": {
     title: "Video Editor",
@@ -54,36 +54,46 @@ const DATA_BY_SLUG: Record<string, { title: string, tasks: Task[] }> = {
   }
 }
 
-export default function DynamicDashboard() {
+export default function RoleDashboard() {
   const params = useParams()
   const router = useRouter()
   
-  // Get slug safely
-  const slug = typeof params.slug === 'string' ? params.slug : "video-editor"
+  // Logic to grab the slug correctly
+  const slug = params?.slug as string
   const currentData = DATA_BY_SLUG[slug]
 
-  // Initialize state with the specific data for this slug
   const [tasks, setTasks] = useState<Task[]>([])
   const [selectedHistoryDate, setSelectedHistoryDate] = useState<string | null>(null)
   
-  // Load data when slug changes
+  // Date Range State
+  const [startDate, setStartDate] = useState("2026-02-01")
+  const [endDate, setEndDate] = useState("2026-02-05")
+  const today = "2026-02-05" 
+
+  // Initialize data on load
   useEffect(() => {
     if (currentData) {
       setTasks(currentData.tasks)
     }
   }, [slug, currentData])
 
-  // Date Range State
-  const [startDate, setStartDate] = useState("2026-02-01")
-  const [endDate, setEndDate] = useState("2026-02-05")
-  const today = "2026-02-05" 
-
-  // If slug doesn't exist, show 404 (basic handling)
+  // --- ERROR HANDLING IF SLUG IS WRONG ---
   if (!currentData) {
-    return <div className="min-h-screen flex items-center justify-center text-white bg-black">Role not found</div>
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white gap-4">
+        <h2 className="text-2xl font-bold">Role Not Found</h2>
+        <p className="text-slate-400">The role "{slug}" does not exist in our database.</p>
+        <button 
+          onClick={() => router.push('/sumiran-team')}
+          className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500"
+        >
+          Back to Selection
+        </button>
+      </div>
+    )
   }
 
-  // --- LOGIC FROM ORIGINAL CODE ---
+  // --- DATA PROCESSING LOGIC ---
   const todayTasks = tasks.filter(t => t.date === today && t.status !== "revision")
   const revisionTasks = tasks.filter(t => t.status === "revision")
 
@@ -118,17 +128,18 @@ export default function DynamicDashboard() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-slate-200 font-sans flex flex-col">
-      {/* Header with Back Button */}
+      {/* Header */}
       <header className="fixed top-0 left-0 right-0 h-16 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-6 z-50">
          <div className="flex items-center gap-4">
-            <button onClick={() => router.push('/')} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+            {/* Back Button fix: goes to /sumiran-team */}
+            <button onClick={() => router.push('/sumiran-team')} className="p-2 hover:bg-white/10 rounded-full transition-colors">
                 <ArrowLeft className="w-5 h-5 text-white" />
             </button>
-            <h1 className="font-bold text-xl text-white tracking-tight">Narayan<span className="text-blue-500">GW</span></h1>
+            <h1 className="font-bold text-xl text-white tracking-tight">Sumiran<span className="text-blue-500">Team</span></h1>
          </div>
          <div className="flex items-center gap-4">
              <div className="px-3 py-1 bg-white/5 rounded-full border border-white/10 text-xs font-medium text-slate-300">
-                {currentData.title} Dashboard
+                {currentData.title}
              </div>
              <Bell className="w-5 h-5 text-slate-400" />
          </div>
@@ -139,8 +150,8 @@ export default function DynamicDashboard() {
         {/* --- SECTION 1: TODAY'S WORK --- */}
         <section>
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-white mb-2">Welcome, Nishant</h1>
-            <p className="text-slate-500">Here is your agenda for <span className="text-blue-400">{currentData.title}</span> today.</p>
+            <h1 className="text-3xl font-bold text-white mb-2">Hello, Team</h1>
+            <p className="text-slate-500">Workspace loaded for: <span className="text-blue-400 font-bold">{currentData.title}</span></p>
           </div>
           
           <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
@@ -221,24 +232,21 @@ export default function DynamicDashboard() {
           </div>
         </section>
 
+        {/* --- STATS GRID --- */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* --- SECTION 4: CUSTOM RANGE REPORT --- */}
+          {/* RANGE REPORT */}
           <section className="bg-[#121212] border border-white/10 p-6 rounded-2xl">
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-blue-400" /> Range Report
             </h2>
-            
             <div className="flex gap-4 mb-6">
               <div className="flex-1">
-                <label className="text-xs text-slate-500 mb-1 block">From</label>
-                <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="w-full bg-black border border-white/20 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} className="w-full bg-black border border-white/20 rounded p-2 text-sm text-white" />
               </div>
               <div className="flex-1">
-                <label className="text-xs text-slate-500 mb-1 block">To</label>
-                <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="w-full bg-black border border-white/20 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} className="w-full bg-black border border-white/20 rounded p-2 text-sm text-white" />
               </div>
             </div>
-
             <div className="bg-white/5 rounded-xl p-4 flex items-center justify-between">
               <div>
                 <div className="text-3xl font-bold text-white">{rangeReport.completed} <span className="text-lg text-slate-500 font-normal">/ {rangeReport.total}</span></div>
@@ -251,13 +259,12 @@ export default function DynamicDashboard() {
             </div>
           </section>
 
-          {/* --- SECTION 5: MONTHLY OVERVIEW --- */}
+          {/* MONTHLY SUMMARY */}
           <section className="bg-gradient-to-br from-[#121212] to-blue-900/10 border border-white/10 p-6 rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 blur-3xl rounded-full" />
             <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-blue-400" /> Monthly Summary
             </h2>
-            
             <div className="mt-6">
               <div className="flex justify-between text-sm mb-2 text-slate-300">
                 <span>February Progress</span>
@@ -283,10 +290,9 @@ export default function DynamicDashboard() {
             </div>
           </section>
         </div>
-
       </main>
 
-      {/* --- POPUP MODAL FOR HISTORY --- */}
+      {/* --- POPUP MODAL --- */}
       <AnimatePresence>
         {selectedHistoryDate && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
@@ -303,10 +309,9 @@ export default function DynamicDashboard() {
                 </h3>
                 <button onClick={() => setSelectedHistoryDate(null)} className="p-1 hover:bg-white/10 rounded-full text-white"><X className="w-5 h-5" /></button>
               </div>
-              
               <div className="p-4 max-h-[60vh] overflow-y-auto">
                 {tasks.filter(t => t.date === selectedHistoryDate).length === 0 ? (
-                  <p className="text-center text-slate-500 py-6">No tasks found for this date.</p>
+                  <p className="text-center text-slate-500 py-6">No tasks found.</p>
                 ) : (
                   tasks.filter(t => t.date === selectedHistoryDate).map(task => (
                     <div key={task.id} className="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
@@ -316,13 +321,9 @@ export default function DynamicDashboard() {
                       </div>
                       <div className="flex items-center gap-2">
                         {task.status === 'completed' ? (
-                          <div className="flex items-center gap-1 text-green-400 bg-green-400/10 px-2 py-1 rounded text-xs font-bold">
-                            <Check className="w-3 h-3" /> Done
-                          </div>
+                          <div className="flex items-center gap-1 text-green-400 bg-green-400/10 px-2 py-1 rounded text-xs font-bold"><Check className="w-3 h-3" /> Done</div>
                         ) : (
-                          <div className="flex items-center gap-1 text-red-400 bg-red-400/10 px-2 py-1 rounded text-xs font-bold">
-                            <X className="w-3 h-3" /> Failed
-                          </div>
+                          <div className="flex items-center gap-1 text-red-400 bg-red-400/10 px-2 py-1 rounded text-xs font-bold"><X className="w-3 h-3" /> Failed</div>
                         )}
                       </div>
                     </div>
@@ -333,7 +334,6 @@ export default function DynamicDashboard() {
           </div>
         )}
       </AnimatePresence>
-
     </div>
   )
 }
