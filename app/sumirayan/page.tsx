@@ -28,22 +28,23 @@ const ROLES = [
   }
 ]
 
-export default function Home() {
+export default function SumiranTeamHome() {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col items-center justify-center p-4">
       
       <div className="text-center mb-16 space-y-4">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-500">
-          Select Your Workspace
+          Sumiran Team Workspace
         </h1>
         <p className="text-slate-400 text-lg max-w-xl mx-auto">
-          Access your personalized dashboard to track tasks, manage revisions, and view performance history.
+          Select your department to access the workflow dashboard.
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full perspective-1000">
         {ROLES.map((role, i) => (
-          <Link href={`/dashboard/${role.id}`} key={role.id} className="group">
+          // --- IMPORTANT FIX: Link path must match your folder name ---
+          <Link href={`/sumiran-team/${role.id}`} key={role.id} className="group">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,7 +73,7 @@ export default function Home() {
                 Open Dashboard <ArrowRight className="w-4 h-4" />
               </div>
 
-              {/* Spine Effect (Book Look) */}
+              {/* Spine Effect */}
               <div className={`absolute left-0 top-2 bottom-2 w-1.5 rounded-r bg-gradient-to-b ${role.color} opacity-50`} />
             </motion.div>
           </Link>
