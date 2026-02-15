@@ -28,23 +28,23 @@ const ROLES = [
   }
 ]
 
-export default function SumiranTeamHome() {
+export default function SumiranLanding() {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col items-center justify-center p-4">
       
       <div className="text-center mb-16 space-y-4">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-500">
-          Sumiran Team Workspace
+          Sumiran Workspace
         </h1>
         <p className="text-slate-400 text-lg max-w-xl mx-auto">
-          Select your department to access the workflow dashboard.
+          Select your role to enter the dashboard.
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full perspective-1000">
         {ROLES.map((role, i) => (
-          // --- IMPORTANT FIX: Link path must match your folder name ---
-          <Link href={`/sumiran-team/${role.id}`} key={role.id} className="group">
+          // --- LINK FIX: Ab ye '/sumiran/video-editor' par jayega ---
+          <Link href={`/sumiran/${role.id}`} key={role.id} className="group">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,6 @@ export default function SumiranTeamHome() {
               }}
               className="relative h-[400px] bg-[#111] rounded-2xl border border-white/10 p-8 flex flex-col justify-between overflow-hidden transition-all duration-300 group-hover:border-white/20"
             >
-              {/* Background Gradient Effect */}
               <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${role.color} opacity-10 blur-[80px] rounded-full group-hover:opacity-20 transition-opacity`} />
               
               <div className="relative z-10">
@@ -73,7 +72,6 @@ export default function SumiranTeamHome() {
                 Open Dashboard <ArrowRight className="w-4 h-4" />
               </div>
 
-              {/* Spine Effect */}
               <div className={`absolute left-0 top-2 bottom-2 w-1.5 rounded-r bg-gradient-to-b ${role.color} opacity-50`} />
             </motion.div>
           </Link>
