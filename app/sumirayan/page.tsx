@@ -34,7 +34,7 @@ export default function SumiranLanding() {
       
       <div className="text-center mb-16 space-y-4">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-500">
-          Sumiran Workspace
+          Sumirayan Workspace
         </h1>
         <p className="text-slate-400 text-lg max-w-xl mx-auto">
           Select your role to enter the dashboard.
@@ -80,3 +80,4 @@ export default function SumiranLanding() {
     </div>
   )
 }
+
