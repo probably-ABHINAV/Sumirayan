@@ -6,18 +6,18 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { navLinks } from "@/lib/data"
-import { supabase } from "@/lib/supabaseClient"
-import { useSupabaseUser } from "@/hooks/use-supabase-user"
+import { useUser, useStackApp } from "@stackframe/stack"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { user, loading } = useSupabaseUser()
+  const user = useUser()
+  const app = useStackApp()
   const router = useRouter()
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
+    await app.signOut()
     setIsMenuOpen(false)
-    router.push("/")
+    // Stack Auth usually handles redirect, but we can force it or let the handler do it
   }
 
   return (
@@ -48,28 +48,26 @@ export function Header() {
 
             {/* ACTIONS */}
             <div className="flex items-center gap-3">
-              {!loading && (
-                <div className="hidden lg:flex items-center gap-3">
-                  {user ? (
-                    <>
-                      <Link href="/account" className="nav-link">Account</Link>
-                      <button onClick={handleLogout} className="nav-link">
-                        Logout
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <Link href="/login" className="nav-link">Login</Link>
-                      <Link
-                        href="/signup"
-                        className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
-                      >
-                        Sign Up
-                      </Link>
-                    </>
-                  )}
-                </div>
-              )}
+              <div className="hidden lg:flex items-center gap-3">
+                {user ? (
+                  <>
+                    <Link href="/account" className="nav-link">Account</Link>
+                    <button onClick={handleLogout} className="nav-link">
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/handler/sign-in" className="nav-link">Login</Link>
+                    <Link
+                      href="/handler/sign-up"
+                      className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
+              </div>
 
               {/* MENU BUTTON */}
               <button

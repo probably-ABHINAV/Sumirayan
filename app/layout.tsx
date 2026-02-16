@@ -2,7 +2,10 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Poppins, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { AuthProvider } from "@/components/providers/auth-provider"
 import "./globals.css"
+
+export const dynamic = "force-dynamic"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -45,16 +48,24 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+import { ClientTooltipProvider } from "@/components/providers/client-tooltip-provider"
+import { syncStackUser } from "@/lib/sync-user"
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+  await syncStackUser()
   return (
     <html lang="en" className="dark">
       <body className={`${poppins.variable} ${playfair.variable} font-sans antialiased`}>
-        {children}
-        <Analytics />
+        <AuthProvider>
+          <ClientTooltipProvider>
+            {children}
+          </ClientTooltipProvider>
+          <Analytics />
+        </AuthProvider>
       </body>
     </html>
   )

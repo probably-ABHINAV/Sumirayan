@@ -255,8 +255,13 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 
     if (error) throw error
     return data || []
-  } catch (error) {
-    console.error('Error fetching testimonials:', error)
+  } catch (error: any) {
+    // Suppress "table not found" errors as we expect this during initial setup
+    if (error?.code === 'PGRST205') {
+      console.warn('Testimonials table not found in Supabase, falling back to static data.')
+    } else {
+      console.error('Error fetching testimonials:', error)
+    }
     return staticTestimonials.map(mapStaticTestimonial)
   }
 }
