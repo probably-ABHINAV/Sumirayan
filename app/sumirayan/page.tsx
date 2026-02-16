@@ -44,7 +44,7 @@ export default function SumiranLanding() {
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl w-full perspective-1000">
         {ROLES.map((role, i) => (
           // --- LINK FIX: Ab ye '/sumiran/video-editor' par jayega ---
-          <Link href={`/sumiran/${role.id}`} key={role.id} className="group">
+          <Link href={`/sumirayan/${role.id}`} key={role.id} className="group">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,5 +80,6 @@ export default function SumiranLanding() {
     </div>
   )
 }
+
 
 
