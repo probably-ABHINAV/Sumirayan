@@ -21,7 +21,7 @@ const ROLES = [
   },
   {
     id: "it-manager",
-    title: "IT Manager",
+    title: "IT Department",
     icon: Server,
     color: "from-emerald-600 to-green-500",
     desc: "Monitor systems, backend fixes, and status."
@@ -80,4 +80,5 @@ export default function SumiranLanding() {
     </div>
   )
 }
+
 
