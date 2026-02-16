@@ -80,7 +80,7 @@ export default function DynamicDashboard() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white gap-4">
         <h2 className="text-2xl font-bold">Role Not Found</h2>
         <button 
-          onClick={() => router.push('/sumiran')}
+          onClick={() => router.push('/sumirayan')}
           className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500"
         >
           Back to Home
@@ -274,3 +274,4 @@ export default function DynamicDashboard() {
     </div>
   )
 }
+
