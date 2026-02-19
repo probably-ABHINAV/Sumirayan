@@ -124,7 +124,7 @@ export default function BpscStudyPage() {
 
                 {/* Replace '#' with your actual PDF path in the public folder */}
                 <a
-                  href="/downloads/bpsc-tre-4-fine-arts-notes.pdf" 
+                  href="/Fineartsnotes.pdf" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-extrabold text-lg transition-all duration-300 hover:bg-primary hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
