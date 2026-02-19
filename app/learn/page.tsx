@@ -79,7 +79,7 @@ export default function LearnPage() {
         </section>
 
         {/* ================= LEARN PHILOSOPHY ================= */}
-        <section className="pb-20">
+        <section className="pb-16">
           <div className="max-w-6xl mx-auto px-6 text-gray-300">
             <h2 className="text-3xl font-bold text-white mb-6">
               Why Sumirayan Learn?
@@ -97,6 +97,60 @@ export default function LearnPage() {
           </div>
         </section>
 
+        {/* ================= BPSC TRE 4 EXAM NOTES ================= */}
+        <section className="pb-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-gray-900 via-black to-gray-900 p-8 md:p-12 shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+            >
+              {/* Decorative Background Blur */}
+              <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl"></div>
+              
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider">
+                      Study Material
+                    </span>
+                    <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+                    <span className="text-xs text-gray-400 font-medium">New Release</span>
+                  </div>
+                  
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    BPSC TRE 4.0 Exam Notes
+                  </h2>
+                  <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
+                    Elevate your preparation with our comprehensively compiled PDF notes. Designed for clarity and strict adherence to the latest syllabus, these notes are your ultimate resource for cracking the exam.
+                  </p>
+                </div>
+
+                <div className="flex-shrink-0 w-full md:w-auto">
+                  {/* Replace '#' with your actual PDF path in the public folder or external URL */}
+                  <a
+                    href="/downloads/bpsc-tre-4-notes.pdf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex w-full md:w-auto items-center justify-center gap-3 px-8 py-4 rounded-full bg-white text-black font-bold transition-all duration-300 hover:bg-primary hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                  >
+                    <svg 
+                      className="w-5 h-5 transition-transform group-hover:-translate-y-1" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* ================= FEATURED POST ================= */}
         {featuredPost && (
           <section className="pb-20">
@@ -104,7 +158,7 @@ export default function LearnPage() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Link href={`/learn/${featuredPost.slug}`} className="block group">
                   <div className="grid lg:grid-cols-2 gap-8 rounded-2xl overflow-hidden border border-white/10">
