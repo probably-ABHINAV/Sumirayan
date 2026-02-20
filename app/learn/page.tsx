@@ -115,7 +115,169 @@ export default function BpscStudyPage() {
                 <div className="mb-10 border-b border-white/10 pb-10">
                   <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-black">
                     <iframe 
-                      className="w-full h-full"
+                      className="w-12 h-12"
+                      src="https://www.youtube.com/embed/sKFfiFSQu84?si=5_MvStnj_70OyEgM" 
+                      title="BPSC Fine Arts Preparation Video" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+                    How to Prepare for BPSC TRE 4.0 Fine Arts
+                  </h2>
+                  <p className="text-gray-400 text-lg">Watch the detailed strategy before downloading your notes.</p>
+                </div>
+                {/* --- YOUTUBE VIDEO SECTION END --- */}
+
+                {/* --- PDF DOWNLOAD SECTION START --- */}
+                <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-6">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Download Fine Arts Notes
+                </h3>
+                <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                  Get instant access to the complete Fine Arts study material for BPSC TRE 4.0. Click the button below to download your copy securely.
+                </p>
+
+                {/* Replace '#' with your actual PDF path in the public folder */}
+                <a
+                  href="/Fineartsnotes.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-extrabold text-lg transition-all duration-300 hover:bg-primary hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                >
+                  <svg 
+                    className="w-6 h-6 transition-transform group-hover:-translate-y-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  Download PDF Now
+                </a>
+                
+                <div className="mt-8 text-sm text-gray-500 font-medium">
+                  PDF Format • 15MB • Updated for 2026 Syllabus
+                </div>
+                 <div className="mb-10 border-b border-white/10 pb-10">
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-black">
+                    <iframe 
+                      className="w-12 h-12"
+                      src="https://www.youtube.com/embed/sKFfiFSQu84?si=5_MvStnj_70OyEgM" 
+                      title="BPSC Fine Arts Preparation Video" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+                    How to Prepare for BPSC TRE 4.0 Fine Arts
+                  </h2>
+                  <p className="text-gray-400 text-lg">Watch the detailed strategy before downloading your notes.</p>
+                </div>
+                {/* --- YOUTUBE VIDEO SECTION END --- */}
+
+                {/* --- PDF DOWNLOAD SECTION START --- */}
+                <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-6">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Download Fine Arts Notes
+                </h3>
+                <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                  Get instant access to the complete Fine Arts study material for BPSC TRE 4.0. Click the button below to download your copy securely.
+                </p>
+
+                {/* Replace '#' with your actual PDF path in the public folder */}
+                <a
+                  href="/Fineartsnotes.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-extrabold text-lg transition-all duration-300 hover:bg-primary hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                >
+                  <svg 
+                    className="w-6 h-6 transition-transform group-hover:-translate-y-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  Download PDF Now
+                </a>
+                
+                <div className="mt-8 text-sm text-gray-500 font-medium">
+                  PDF Format • 15MB • Updated for 2026 Syllabus
+                </div>
+                 <div className="mb-10 border-b border-white/10 pb-10">
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-black">
+                    <iframe 
+                      className="w-12 h-12"
+                      src="https://www.youtube.com/embed/sKFfiFSQu84?si=5_MvStnj_70OyEgM" 
+                      title="BPSC Fine Arts Preparation Video" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+                    How to Prepare for BPSC TRE 4.0 Fine Arts
+                  </h2>
+                  <p className="text-gray-400 text-lg">Watch the detailed strategy before downloading your notes.</p>
+                </div>
+                {/* --- YOUTUBE VIDEO SECTION END --- */}
+
+                {/* --- PDF DOWNLOAD SECTION START --- */}
+                <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-6">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Download Fine Arts Notes
+                </h3>
+                <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                  Get instant access to the complete Fine Arts study material for BPSC TRE 4.0. Click the button below to download your copy securely.
+                </p>
+
+                {/* Replace '#' with your actual PDF path in the public folder */}
+                <a
+                  href="/Fineartsnotes.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-extrabold text-lg transition-all duration-300 hover:bg-primary hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+                >
+                  <svg 
+                    className="w-6 h-6 transition-transform group-hover:-translate-y-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  Download PDF Now
+                </a>
+                
+                <div className="mt-8 text-sm text-gray-500 font-medium">
+                  PDF Format • 15MB • Updated for 2026 Syllabus
+                </div>
+                 <div className="mb-10 border-b border-white/10 pb-10">
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-black">
+                    <iframe 
+                      className="w-12 h-12"
                       src="https://www.youtube.com/embed/sKFfiFSQu84?si=5_MvStnj_70OyEgM" 
                       title="BPSC Fine Arts Preparation Video" 
                       frameBorder="0" 
