@@ -97,8 +97,9 @@ export default function BpscStudyPage() {
         </section>
 
         {/* ================= PDF DOWNLOAD & VIDEO SECTION ================= */}
-        <section className="pb-6">
-          <div className="max-w-4xl mx-auto px-6">
+       <section className="pb-6">
+          {/* Changed max-w-4xl to max-w-6xl to make the entire card and video larger */}
+          <div className="max-w-6xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -112,8 +113,7 @@ export default function BpscStudyPage() {
                 
                 {/* --- YOUTUBE VIDEO SECTION START --- */}
                 <div className="mb-10 border-b border-white/10 pb-10">
-                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-5 bg-black">
-                    {/* Replace the src URL with your actual YouTube embed link. Add ?autoplay=1&mute=1 for autoplay */}
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-6 bg-black">
                     <iframe 
                       className="w-full h-full"
                       src="https://www.youtube.com/embed/sKFfiFSQu84?si=5_MvStnj_70OyEgM" 
@@ -124,13 +124,12 @@ export default function BpscStudyPage() {
                       allowFullScreen
                     ></iframe>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
                     How to Prepare for BPSC TRE 4.0 Fine Arts
                   </h2>
-                  <p className="text-gray-400">Watch the detailed strategy before downloading your notes.</p>
+                  <p className="text-gray-400 text-lg">Watch the detailed strategy before downloading your notes.</p>
                 </div>
                 {/* --- YOUTUBE VIDEO SECTION END --- */}
-
 
                 {/* --- PDF DOWNLOAD SECTION START --- */}
                 <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-6">
