@@ -116,7 +116,7 @@ export default function BpscStudyPage() {
                     {/* Replace the src URL with your actual YouTube embed link. Add ?autoplay=1&mute=1 for autoplay */}
                     <iframe 
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?autoplay=1&mute=1" 
+                      src="https://youtu.be/sKFfiFSQu84" 
                       title="BPSC Fine Arts Preparation Video" 
                       frameBorder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
