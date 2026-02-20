@@ -97,7 +97,7 @@ export default function BpscStudyPage() {
         </section>
 
         {/* ================= PDF DOWNLOAD & VIDEO SECTION ================= */}
-        <section className="pb-12">
+        <section className="pb-6">
           <div className="max-w-4xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
