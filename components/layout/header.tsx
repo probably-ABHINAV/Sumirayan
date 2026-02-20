@@ -20,6 +20,19 @@ export function Header() {
     // Stack Auth usually handles redirect, but we can force it or let the handler do it
   }
 
+  // --- NEW PROTECTED NAVIGATION LOGIC ---
+  const handleProtectedNavigation = (e, href) => {
+    // Agar user Learn page par jana chahta hai aur logged in NAHI hai
+    if (href === "/learn" && !user) {
+      e.preventDefault(); // Normal page load rok do
+      setIsMenuOpen(false); // Menu close kar do (mobile ke liye)
+      router.push("/handler/sign-in"); // Login page par redirect kar do
+    } else {
+      // Agar user logged in hai ya kisi aur page pe ja raha hai
+      setIsMenuOpen(false);
+    }
+  }
+
   return (
     <>
       {/* ================= HEADER BAR ================= */}
@@ -43,7 +56,14 @@ export function Header() {
               <Link href="/design" className="nav-link">Design</Link>
               <Link href="/photography" className="nav-link">Photography</Link>
               <Link href="/art" className="nav-link">Art</Link>
-              <Link href="/learn" className="nav-link">Learn</Link>
+              {/* Added onClick interceptor here */}
+              <Link 
+                href="/learn" 
+                onClick={(e) => handleProtectedNavigation(e, "/learn")} 
+                className="nav-link"
+              >
+                Learn
+              </Link>
             </nav>
 
             {/* ACTIONS */}
@@ -101,7 +121,6 @@ export function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center h-full"
                 >
-                  {/* SAME LOGO HERE */}
                   <Image
                     src="/sumirayan design.png"
                     alt="Sumirayan Design"
@@ -135,9 +154,10 @@ export function Header() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
+                        {/* Added onClick interceptor for mobile menu too */}
                         <Link
                           href={link.href}
-                          onClick={() => setIsMenuOpen(false)}
+                          onClick={(e) => handleProtectedNavigation(e, link.href)}
                           className="block text-2xl sm:text-3xl md:text-5xl font-bold hover:text-primary transition-colors py-2"
                         >
                           {link.name}
@@ -188,14 +208,14 @@ export function Header() {
                     ) : (
                       <>
                         <Link
-                          href="/login"
+                          href="/handler/sign-in"
                           onClick={() => setIsMenuOpen(false)}
                           className="px-6 py-3 border border-border rounded-lg text-center"
                         >
                           Log In
                         </Link>
                         <Link
-                          href="/signup"
+                          href="/handler/sign-up"
                           onClick={() => setIsMenuOpen(false)}
                           className="px-6 py-3 bg-secondary rounded-lg text-center"
                         >
