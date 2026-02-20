@@ -96,7 +96,7 @@ export default function BpscStudyPage() {
           </div>
         </section>
 
-        {/* ================= PDF DOWNLOAD SECTION ================= */}
+        {/* ================= PDF DOWNLOAD & VIDEO SECTION ================= */}
         <section className="pb-12">
           <div className="max-w-4xl mx-auto px-6">
             <motion.div
@@ -109,15 +109,39 @@ export default function BpscStudyPage() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/5 blur-[80px] rounded-full pointer-events-none"></div>
               
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-8">
+                
+                {/* --- YOUTUBE VIDEO SECTION START --- */}
+                <div className="mb-10 border-b border-white/10 pb-10">
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-5 bg-black">
+                    {/* Replace the src URL with your actual YouTube embed link. Add ?autoplay=1&mute=1 for autoplay */}
+                    <iframe 
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?autoplay=1&mute=1" 
+                      title="BPSC Fine Arts Preparation Video" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    How to Prepare for BPSC TRE 4.0 Fine Arts
+                  </h2>
+                  <p className="text-gray-400">Watch the detailed strategy before downloading your notes.</p>
+                </div>
+                {/* --- YOUTUBE VIDEO SECTION END --- */}
+
+
+                {/* --- PDF DOWNLOAD SECTION START --- */}
+                <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-6">
                   <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
                 </div>
                 
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Download Fine Arts Notes
-                </h2>
+                </h3>
                 <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
                   Get instant access to the complete Fine Arts study material for BPSC TRE 4.0. Click the button below to download your copy securely.
                 </p>
@@ -143,6 +167,8 @@ export default function BpscStudyPage() {
                 <div className="mt-8 text-sm text-gray-500 font-medium">
                   PDF Format • 15MB • Updated for 2026 Syllabus
                 </div>
+                {/* --- PDF DOWNLOAD SECTION END --- */}
+
               </div>
             </motion.div>
           </div>
