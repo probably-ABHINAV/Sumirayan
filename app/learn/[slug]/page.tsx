@@ -132,6 +132,27 @@ export default function ArticlePage() {
               </div>
             )}
 
+            {/* --- YOUTUBE VIDEO SECTION START --- */}
+            <div className="mb-12 border-b border-border pb-10">
+              <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-border mb-5 bg-black">
+                {/* Note: You can change the src to `{post.video_url}` if you add video links to your Supabase database */}
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?autoplay=1&mute=1" 
+                  title="Article Video" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Detailed Video Breakdown
+              </h2>
+              <p className="text-muted-foreground">Watch the video explanation before diving into the article below.</p>
+            </div>
+            {/* --- YOUTUBE VIDEO SECTION END --- */}
+
             <div className="prose prose-invert prose-lg max-w-none">
               {showFullContent ? (
                 <div className="whitespace-pre-wrap text-foreground/90 leading-relaxed">
