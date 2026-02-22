@@ -9,7 +9,7 @@ export default function BpscStudyPage() {
   const studyMaterials = [
     { id: 1, title: "BPSC TRE 4.0 Fine Arts | Modern Indian Art: Raja Ravi Varma to Contemporary Art ", pdfLink: "/Fineartsnotes.pdf", videoId: "sKFfiFSQu84?si=5_MvStnj_70OyEgM" },
     { id: 2, title: "प्रागैतिहासिक चित्रकला: भीमबेटका, पंचमढ़ी, पहाड़गढ़ — 30,000 ई.पू. से लेकर Neolithic तक", pdfLink: "/आदिकाल_की_चित्रकला_50.pdf", videoId: "dr_K9gjygHU?si=yQgCNAz0iQV3di51" },
-    { id: 3, title: "Fine Arts Part 3", pdfLink: "/Fineartsnotes.pdf", videoId: "sKFfiFSQu84?si=5_MvStnj_70OyEgM" },
+    { id: 3, title: "सिंधु घाटी सभ्यता की चित्रकला | 4000 साल पुरानी कला", pdfLink: "/Notes.pdf", videoId: "8E8Hw0Qn5g4?si=ggKjDSmCCcXmiWNS" },
     { id: 4, title: "Fine Arts Part 4", pdfLink: "/Fineartsnotes.pdf", videoId: "sKFfiFSQu84?si=5_MvStnj_70OyEgM" },
   ];
 
