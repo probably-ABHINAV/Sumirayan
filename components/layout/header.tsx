@@ -71,7 +71,7 @@ export function Header() {
               <div className="hidden lg:flex items-center gap-3">
                 {user ? (
                   <>
-                    <Link href="/account" className="nav-link">Account</Link>
+                    <Link href="/dashboard" className="nav-link">Account</Link>
                     <button onClick={handleLogout} className="nav-link">
                       Logout
                     </button>
