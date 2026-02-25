@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import { stackServerApp } from "./lib/stack-auth"
+import { createClient } from "@supabase/supabase-js" // Add this import
 
 /**
  * Authentication Middleware
- * 
- * Enforces role-based access control on protected routes
+ * * Enforces role-based access control on protected routes
  * This runs on EVERY request before reaching the page
  */
 
@@ -62,8 +62,37 @@ export async function middleware(request: NextRequest) {
 
   // If authenticated, check role-based access
   if (user && !isPublicRoute) {
-    // Prioritize Server-Set Read-Only Metadata (Secure) -> Fallback to Client Metadata (Legacy/Bootstrap)
-    const userRole = (user.clientReadOnlyMetadata?.role || user.clientMetadata?.role) as string | undefined
+    // 1. First check Stack Auth Metadata
+    let userRole = (user.clientReadOnlyMetadata?.role || user.clientMetadata?.role) as string | undefined
+
+    // 2. Override with Supabase Database Role (Source of Truth)
+    try {
+      // Assuming you have these env variables set in your project
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      
+      if (supabaseUrl && supabaseKey) {
+        const supabase = createClient(supabaseUrl, supabaseKey)
+        
+        // Stack Auth usually stores email in primaryEmail
+        const userEmail = user.primaryEmail || (user as any).email
+
+        if (userEmail) {
+          const { data: dbUser } = await supabase
+            .from('users')
+            .select('role')
+            .eq('email', userEmail)
+            .single()
+
+          // If Supabase has a role, use it!
+          if (dbUser && dbUser.role) {
+            userRole = dbUser.role
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Supabase Role Fetch Error:", error)
+    }
 
     // Find matching protected route
     const protectedRoute = Object.keys(PROTECTED_ROUTES).find((route) =>
@@ -79,7 +108,8 @@ export async function middleware(request: NextRequest) {
         return new NextResponse(
           JSON.stringify({
             error: "Forbidden",
-            message: `Access denied. Required role: ${allowedRoles.join(" or ")}`,
+            // Added current role to the message so you can easily debug if it's fetching correctly
+            message: `Access denied. Required role: ${allowedRoles.join(" or ")}. Your current role is: ${userRole || "null"}`, 
           }),
           {
             status: 403,
@@ -99,13 +129,6 @@ export async function middleware(request: NextRequest) {
 // Configure which routes this middleware runs on
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public files (public folder)
-     */
     "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }
