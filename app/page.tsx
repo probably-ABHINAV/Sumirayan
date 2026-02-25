@@ -16,11 +16,11 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <Impact />
         <EventsLearnPreview />
         <CreativePillars />
         <SignatureProjects />
         <Process />
-        <Impact />
         <Testimonials />
         <ContactForm />
         <CareersPreview />
