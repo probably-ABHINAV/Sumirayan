@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 // Replace these with the actual paths to your PNG logos in your public folder
 const topRowLogos = [
-  "/yogesh logo.png",
+  "/sankalp logo.png",
   "/one step logo.png",
   "/blve & blessed logo.png",
   "/rexine house logo.png",
@@ -16,7 +16,7 @@ const bottomRowLogos = [
   "/birdcart logo.png",
   "/raj automobiles.png",
   "/sasta plots logo.png",
-  "/foundation.jpeg",
+  "/ampush logo.png",
 ]
 
 export function Impact() {
