@@ -6,8 +6,7 @@ import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { 
   CheckCircle2, XCircle, AlertTriangle, 
-  Calendar, Check, X, ChevronRight, BarChart3,
-  LayoutDashboard, LogOut, Bell
+  Calendar, X, BarChart3, LayoutDashboard 
 } from "lucide-react"
 import { Task, updateTaskStatus, TaskStatus } from "@/app/actions/tasks"
 import Link from "next/link"
@@ -22,7 +21,8 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
   const [startDate, setStartDate] = useState("2026-02-01")
   const [endDate, setEndDate] = useState("2026-02-05")
 
-  const today = new Date().toISOString().split('T')[0]
+  // FIX 1: 'en-CA' safely formats the local date exactly as YYYY-MM-DD avoiding UTC mismatch
+  const today = new Date().toLocaleDateString('en-CA')
 
   // --- FILTERS ---
   // Tasks due today OR pending/in_progress but overdue?
@@ -42,7 +42,7 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
     for (let i = 0; i < 7; i++) {
       const d = new Date()
       d.setDate(d.getDate() - i)
-      dates.push(d.toISOString().split('T')[0])
+      dates.push(d.toLocaleDateString('en-CA')) // Kept consistent with local timezone
     }
     return dates
   }, [])
@@ -73,6 +73,9 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
     if (newUiStatus === 'failed') newDbStatus = 'archived' 
     if (newUiStatus === 'pending') newDbStatus = 'in_progress'
 
+    // FIX 2: Store previous state for safe revert
+    const previousTasks = [...tasks]
+
     // Optimistic Update
     setTasks(prev => prev.map(t => t.id === id ? { ...t, status: newDbStatus } : t))
     
@@ -80,7 +83,9 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
       await updateTaskStatus(id, newDbStatus)
     } catch (err) {
       console.error("Failed update", err)
-      // Revert not implemented
+      // FIX 2: Revert UI if DB fails
+      setTasks(previousTasks)
+      alert("Something went wrong updating the task. Please try again.")
     }
   }
 
@@ -250,8 +255,20 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
       {/* POPUP MODAL */}
       <AnimatePresence>
         {selectedHistoryDate && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <motion.div className="bg-[#181818] border border-white/10 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+          // FIX 3: Added motion.div and animation variables for smooth entry/exit
+          <motion.div 
+            key="modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-[#181818] border border-white/10 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl"
+            >
               <div className="p-4 border-b border-white/10 flex justify-between items-center bg-white/5">
                 <h3 className="text-white font-bold flex items-center gap-2">Work Log: {selectedHistoryDate}</h3>
                 <button onClick={() => setSelectedHistoryDate(null)} className="p-1 hover:bg-white/10 rounded-full text-white"><X className="w-5 h-5" /></button>
@@ -274,7 +291,7 @@ export default function DashboardClient({ initialTasks, user }: { initialTasks: 
                   {tasks.filter(t => t.date === selectedHistoryDate).length === 0 && <p className="text-center text-slate-500">No tasks.</p>}
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
