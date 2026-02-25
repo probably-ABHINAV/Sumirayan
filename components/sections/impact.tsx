@@ -25,9 +25,9 @@ export function Impact() {
       <div className="w-full">
         
         {/* Heading */}
-        <h3 className="text-xs sm:text-sm uppercase tracking-widest text-muted-foreground mb-8 sm:mb-12 text-center">
-          Trusted by brands across the US, UK & India
-        </h3>
+        <h2 className="text-xs sm:text-sm uppercase tracking-widest text-muted-foreground mb-8 sm:mb-12 text-center">
+          Trusted by brands across India
+        </h2>
         
         <div className="relative flex flex-col gap-8 sm:gap-12 overflow-hidden w-full">
           
