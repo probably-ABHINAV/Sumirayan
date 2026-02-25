@@ -6,19 +6,19 @@ import { stats } from "@/lib/data"
 
 // Replace these with the actual paths to your PNG logos in your public folder
 const topRowLogos = [
-  "/logos/accessorize.png",
-  "/logos/happy-threads.png",
-  "/logos/pomp.png",
-  "/logos/colombian.png",
-  "/logos/true-fro.png",
+  "/yogesh logo.png",
+  "/one step logo.png",
+  "/blve & blessed logo.png",
+  "/rexine house logo.png",
+  "/ashadeep clinic logo.png",
 ]
 
 const bottomRowLogos = [
-  "/logos/home-kouzina.png",
-  "/logos/kotak.png",
-  "/logos/the-zappy-box.png",
-  "/logos/peepal-tales.png",
-  "/logos/unbottle.png",
+  "/arch build logo.png",
+  "/birdcart logo.png",
+  "/raj automobiles.png",
+  "/sasta plots logo.png",
+  "/foundation.jpeg",
 ]
 
 export function Impact() {
