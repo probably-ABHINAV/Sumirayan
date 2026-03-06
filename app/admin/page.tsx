@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ShieldCheck, Users, Activity, Clock, ShieldAlert } from "lucide-react"
 import Link from "next/link"
+import { redirect } from "next/navigation" // 🔥 Import redirect
 
 /* 🔥 ROLE NORMALIZER */
 const normalizeRole = (role?: string | null): string => {
@@ -14,14 +15,23 @@ const normalizeRole = (role?: string | null): string => {
 }
 
 export default async function AdminOverviewPage() {
-  const [usersRaw, logsRaw] = await Promise.all([
-    getAdminUsers(),
-    getSystemActivity()
-  ])
+  let users = []
+  let logs = []
 
-  /* 🔥 SAFETY FALLBACKS */
-  const users = usersRaw ?? []
-  const logs = logsRaw ?? []
+  // 🔥 Wrap the fetching in a try/catch block
+  try {
+    const [usersRaw, logsRaw] = await Promise.all([
+      getAdminUsers(),
+      getSystemActivity()
+    ])
+    
+    users = usersRaw ?? []
+    logs = logsRaw ?? []
+  } catch (error) {
+    console.error("Access denied or fetch failed:", error)
+    // If they aren't an admin, boot them back to the homepage
+    redirect("/") 
+  }
 
   const pendingCount = users.filter(u => normalizeRole(u.role) === "client").length
   const adminCount = users.filter(u => normalizeRole(u.role) === "admin").length
