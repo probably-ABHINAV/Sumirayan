@@ -1,9 +1,9 @@
 import { getAdminUsers, getSystemActivity } from "@/app/actions/admin"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ShieldCheck, Users, Activity, Clock, ShieldAlert } from "lucide-react"
+import { ShieldCheck, Users, Activity, Clock, ShieldAlert, AlertTriangle } from "lucide-react" // Added AlertTriangle
 import Link from "next/link"
-import { redirect } from "next/navigation" // 🔥 Import redirect
+// 🔥 redirect ka import hata diya gaya hai
 
 /* 🔥 ROLE NORMALIZER */
 const normalizeRole = (role?: string | null): string => {
@@ -17,8 +17,9 @@ const normalizeRole = (role?: string | null): string => {
 export default async function AdminOverviewPage() {
   let users = []
   let logs = []
+  let errorMsg = null
 
-  // 🔥 Wrap the fetching in a try/catch block
+  // 🔥 Try/Catch block WITHOUT redirect to prevent Next.js Error 310 bug
   try {
     const [usersRaw, logsRaw] = await Promise.all([
       getAdminUsers(),
@@ -27,12 +28,37 @@ export default async function AdminOverviewPage() {
     
     users = usersRaw ?? []
     logs = logsRaw ?? []
-  } catch (error) {
+  } catch (error: any) {
     console.error("Access denied or fetch failed:", error)
-    // If they aren't an admin, boot them back to the homepage
-    redirect("/") 
+    errorMsg = error.message // Save the error message instead of redirecting
   }
 
+  // 🔥 Agar user admin nahi hai, toh redirect karne ke bajaye yeh safe UI dikhao
+  if (errorMsg) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] text-slate-200 flex flex-col">
+        <Header />
+        <main className="flex-grow flex flex-col items-center justify-center p-6 text-center">
+          <AlertTriangle className="w-16 h-16 text-red-500 mb-4" />
+          <h1 className="text-3xl font-bold text-white mb-2">Access Denied</h1>
+          <p className="text-slate-400">Aapko is page ko dekhne ki permission nahi hai.</p>
+          
+          <div className="mt-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-mono max-w-lg">
+            Error: {errorMsg}
+            <br/><br/>
+            (Make sure your user has the 'admin' role exactly in your Stack Auth User Metadata)
+          </div>
+
+          <Link href="/" className="mt-8 px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition">
+            Go Back Home
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  // --- Normal Admin UI below (only renders if no error) ---
   const pendingCount = users.filter(u => normalizeRole(u.role) === "client").length
   const adminCount = users.filter(u => normalizeRole(u.role) === "admin").length
 
@@ -65,7 +91,6 @@ export default async function AdminOverviewPage() {
 
         {/* Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-
           {/* Total Users */}
           <div className="bg-[#121212] border border-white/10 p-6 rounded-2xl">
             <div className="flex items-center gap-4">
@@ -116,12 +141,10 @@ export default async function AdminOverviewPage() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Activity */}
         <div className="bg-[#121212] border border-white/10 rounded-2xl overflow-hidden">
-
           <div className="p-6 border-b border-white/10 flex justify-between items-center">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <Activity className="text-slate-400 w-5 h-5" />
@@ -138,16 +161,9 @@ export default async function AdminOverviewPage() {
             </div>
           ) : (
             <div className="divide-y divide-white/5">
-              {logs.map((log) => {
-
-                const safeAction = log.action
-                  ? log.action.replace("_", " ")
-                  : "unknown action"
-
-                const safeEntity =
-                  log.entity_id
-                    ? String(log.entity_id).substring(0, 8)
-                    : "N/A"
+              {logs.map((log: any) => {
+                const safeAction = log.action ? log.action.replace("_", " ") : "unknown action"
+                const safeEntity = log.entity_id ? String(log.entity_id).substring(0, 8) : "N/A"
 
                 return (
                   <div key={log.id} className="p-4 hover:bg-white/[0.02] transition-colors flex gap-4">
@@ -165,27 +181,19 @@ export default async function AdminOverviewPage() {
                           <span className="font-semibold text-white">
                             {log.actor?.full_name || log.actor?.email || "Unknown"}
                           </span>
-                          <span className="text-slate-500">
-                            {" "} {safeAction} {" "}
-                          </span>
+                          <span className="text-slate-500"> {" "} {safeAction} {" "} </span>
                           <span className="font-mono text-xs text-slate-500 bg-white/5 px-1 py-0.5 rounded">
                             {safeEntity}
                           </span>
                         </p>
-
                         <span className="text-xs text-slate-500 whitespace-nowrap ml-4">
-                          {log.created_at
-                            ? new Date(log.created_at).toLocaleString()
-                            : "N/A"}
+                          {log.created_at ? new Date(log.created_at).toLocaleString() : "N/A"}
                         </span>
                       </div>
 
                       {log.details && (
                         <div className="mt-1 text-xs text-slate-500 font-mono bg-black/30 p-2 rounded border border-white/5 inline-block">
-                          {JSON.stringify(log.details)
-                            .replace(/[{"}]/g, "")
-                            .replace(/:/g, ": ")
-                            .replace(/,/g, " · ")}
+                          {JSON.stringify(log.details).replace(/[{"}]/g, "").replace(/:/g, ": ").replace(/,/g, " · ")}
                         </div>
                       )}
                     </div>
@@ -196,16 +204,11 @@ export default async function AdminOverviewPage() {
           )}
 
           <div className="p-4 bg-white/[0.02] border-t border-white/5 text-center">
-            <Link
-              href="/admin/users"
-              className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-bold"
-            >
+            <Link href="/admin/users" className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-bold">
               View All Users
             </Link>
           </div>
-
         </div>
-
       </main>
 
       <Footer />
