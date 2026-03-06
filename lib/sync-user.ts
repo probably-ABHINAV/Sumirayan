@@ -7,13 +7,16 @@ export async function syncStackUser() {
 
     if (!user) return null
 
+    const email = user.primaryEmail ?? ""
+    const name = user.displayName ?? email
+
     const { error } = await supabaseAdmin
       .from("users")
       .upsert(
         {
           id: user.id,
-          email: user.primaryEmail ?? user.email ?? "",
-          full_name: user.displayName ?? user.primaryEmail ?? "User",
+          email: email,
+          full_name: name,
         },
         {
           onConflict: "id",
@@ -21,12 +24,12 @@ export async function syncStackUser() {
       )
 
     if (error) {
-      console.error("Failed to sync user:", error.message)
+      console.error("User sync failed:", error.message)
     }
 
     return user
-  } catch (err) {
-    console.error("Error in syncStackUser:", err)
+  } catch (error) {
+    console.error("syncStackUser error:", error)
     return null
   }
 }
