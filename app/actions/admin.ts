@@ -1,9 +1,10 @@
 'use server'
 
+import { revalidatePath } from "next/cache"
 import { supabaseAdmin } from "@/lib/supabaseAdmin"
 import { stackServerApp } from "@/lib/stack-auth"
 import { syncStackUser } from "@/lib/sync-user"
-import { revalidatePath } from "next/cache"
+import { createSupabaseUserClient } from "@/lib/supabase-scored" // Moved to the top!
 
 export type UserRole = 'admin' | 'manager' | 'developer' | 'designer' | 'video_editor' | 'client'
 
@@ -17,59 +18,6 @@ export interface AdminUser {
   task_count?: number
 }
 
-async function requireAdmin() {
-  const user = await syncStackUser()
-  if (!user) throw new Error("Unauthorized")
-  
-  // Check Stack Auth Metadata for Authority
-  const stackUser = await stackServerApp.getUser()
-  const role = stackUser?.clientReadOnlyMetadata?.role || stackUser?.clientMetadata?.role
-  
-  if (role !== 'admin') {
-    throw new Error("Forbidden: Admin access only")
-  }
-  return user
-}
-
-import { createSupabaseUserClient } from "@/lib/supabase-scored"
-// ...
-
-export async function getAdminUsers() {
-  const user = await requireAdmin() // Returns Stack User
-  // Use Scoped Client
-  const supabase = await createSupabaseUserClient({ id: user.id, role: 'admin' })
-
-  const { data, error } = await supabase
-    .from('users')
-    .select('*, tasks:tasks!assigned_to(count)')
-    .order('created_at', { ascending: false })
-// ...
-
-  if (error) throw new Error(error.message)
-  
-  // Transform to flat object if needed, usually Supabase returns { ..., tasks: [{ count: 5 }] }
-  // We need to map it if we want clean AdminUser type
-  return data.map((u: any) => ({
-    ...u,
-    task_count: u.tasks?.[0]?.count || 0
-  })) as AdminUser[]
-}
-
-// --- Audit Logging Helpers ---
-
-// Log an action to the audit table
-async function logAuditAction(action: string, entityType: string, entityId: string, details: any) {
-  const actor = await requireAdmin() // Ensure logged in as admin
-  
-  await supabaseAdmin.from('audit_logs').insert({
-    action,
-    entity_type: entityType,
-    entity_id: entityId,
-    actor_id: actor.id,
-    details
-  })
-}
-
 export interface AuditLog {
   id: string
   action: string
@@ -79,6 +27,60 @@ export interface AuditLog {
   details: any
   created_at: string
   actor?: { full_name: string; email: string } // Joined
+}
+
+// --- Authorization Helper ---
+
+async function requireAdmin() {
+  const user = await syncStackUser()
+  if (!user) throw new Error("Unauthorized")
+  
+  // Check Stack Auth Metadata for Authority
+  const stackUser = await stackServerApp.getUser()
+  const role = stackUser?.clientReadOnlyMetadata?.role || stackUser?.clientMetadata?.role
+  
+  if (role !== 'admin') {
+    throw new Error("Forbidden: Admin access only. Ensure your Stack Auth user metadata has role: 'admin'")
+  }
+  return user
+}
+
+// --- Admin Queries ---
+
+export async function getAdminUsers() {
+  const user = await requireAdmin() // Returns Stack User
+  
+  // Use Scoped Client
+  const supabase = await createSupabaseUserClient({ id: user.id, role: 'admin' })
+
+  const { data, error } = await supabase
+    .from('users')
+    .select('*, tasks:tasks!assigned_to(count)')
+    .order('created_at', { ascending: false })
+
+  if (error) throw new Error(error.message)
+  
+  // Transform to flat object
+  return data.map((u: any) => ({
+    ...u,
+    task_count: u.tasks?.[0]?.count || 0
+  })) as AdminUser[]
+}
+
+// --- Audit Logging Helpers ---
+
+async function logAuditAction(action: string, entityType: string, entityId: string, details: any) {
+  const actor = await requireAdmin() // Ensure logged in as admin
+  
+  const { error } = await supabaseAdmin.from('audit_logs').insert({
+    action,
+    entity_type: entityType,
+    entity_id: entityId,
+    actor_id: actor.id,
+    details
+  })
+
+  if (error) console.error("Failed to log audit action:", error)
 }
 
 export async function getSystemActivity() {
@@ -137,9 +139,6 @@ export async function updateUserRole(userId: string, newRole: UserRole) {
       }
   } catch (e) {
       console.error("Failed to update Stack Auth:", e)
-      // We proceed to DB update to avoid blocking, but log it?
-      // Actually, if Stack update fails, we might want to throw.
-      // But for now, we continue.
   }
 
   // 2. Update Supabase (The Database)
